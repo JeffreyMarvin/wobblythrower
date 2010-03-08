@@ -1,0 +1,23 @@
+<p>
+  <b>Title:</b>
+  <%=h @document.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= DocumentsHelper::Differ.diff(textilize(@document.content), textilize(@version.content)) %>
+</p>
+
+<% @documentversion.reverse.each do |version| %>
+  Version <%= version.version %> Updated <%= version.updated_at %>
+    <%= link_to '(restore)', 
+                   :action => 'revert_to_version', 
+                   :version_id => version.id, 
+                   :id => @document %>
+    <%= link_to '(show)', 
+                   :action => 'show_version', 
+                   :version_id => version.id, 
+                   :id => @document %><br />
+<% end %>
+<%= link_to 'Edit', edit_document_path(@document) %> |
+<%= link_to 'Back', documents_path %>
