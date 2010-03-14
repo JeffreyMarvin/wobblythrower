@@ -43,7 +43,12 @@ class DocumentsController < ApplicationController
   def create
     
     uploaded_file = params[:xml_file]
-    data = uploaded_file.read if uploaded_file.respond_to? :read
+    doc = REXML::Document.new uploaded_file
+    doc = parse_xml(doc)
+    data = ""
+    doc.write data
+    
+#    data = uploaded_file.read if uploaded_file.respond_to? :read
     
     @document = Document.new({:title => params[:title], :content => data})
     
@@ -66,7 +71,12 @@ class DocumentsController < ApplicationController
   def update
     
     uploaded_file = params[:xml_file]
-    data = uploaded_file.read if uploaded_file.respond_to? :read
+    doc = REXML::Document.new uploaded_file
+    doc = parse_xml(doc)
+    data = ""
+    doc.write data
+    
+#    data = uploaded_file.read if uploaded_file.respond_to? :read
     
     @document = Document.find(params[:id])
 
@@ -125,6 +135,10 @@ class DocumentsController < ApplicationController
       format.html # show.html.erb
       format.xml  { render :xml => @document }
     end
+  end
+  
+  def parse_xml(doc)
+    return doc
   end
 
 end
