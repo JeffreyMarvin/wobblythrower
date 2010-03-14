@@ -1,0 +1,1078 @@
+
+
+Processing DocumentsController#index (for 127.0.0.1 at 2010-03-14 17:51:32) [GET]
+  [4;36;1mDocument Load (0.6ms)[0m   [0;1mSELECT * FROM "documents" [0m
+Rendering template within layouts/documents
+Rendering documents/index
+Completed in 185ms (View: 63, DB: 1) | 200 OK [http://localhost/documents]
+
+
+Processing DocumentsController#new (for 127.0.0.1 at 2010-03-14 17:51:35) [GET]
+Rendering template within layouts/documents
+Rendering documents/new
+ERROR: compiling _run_erb_app47views47documents47new46html46erb RAISED compile error
+/Users/jeff/Sites/wobblythrower/app/views/documents/new.html.erb:3: syntax error, unexpected '{', expecting ')'
+;  form_for (@document {:multipart => true}) do |f| ; ...
+                        ^
+/Users/jeff/Sites/wobblythrower/app/views/documents/new.html.erb:15: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47documents47new46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>New document</h1>\n\n"
+
+;  form_for (@document {:multipart => true}) do |f| ; @output_buffer.concat "\n  "
+; @output_buffer.concat(( f.error_messages ).to_s); @output_buffer.concat "\n\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.file_field :xml_file ).to_s); @output_buffer.concat "\n  </p>\n  <p>\n    "
+
+
+; @output_buffer.concat(( f.submit 'Create' ).to_s); @output_buffer.concat "\n  </p>\n"
+
+;  end ; @output_buffer.concat "\n\n"
+
+; @output_buffer.concat(( link_to 'Back', documents_path ).to_s); @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/jeff/Sites/wobblythrower/app/views/documents/new.html.erb:15:in `compile!'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:951:in `render_without_benchmark'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/jeff/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/jeff/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `send'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:135:in `custom'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:179:in `respond'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `each'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:173:in `respond'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/mime_responds.rb:107:in `respond_to'
+/Users/jeff/Sites/wobblythrower/app/controllers/documents_controller.rb:30:in `new'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `send'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1331:in `perform_action_without_filters'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/jeff/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Users/jeff/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Users/jeff/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Users/jeff/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/Users/jeff/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Users/jeff/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/Users/jeff/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Users/jeff/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Users/jeff/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/Users/jeff/.gem/ruby/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/jeff/Sites/wobblythrower/app/views/documents/new.html.erb:3: syntax error, unexpected '{', expecting ')'
+;  form_for (@document {:multipart => true}) do |f| ; ...
+                        ^
+/Users/jeff/Sites/wobblythrower/app/views/documents/new.html.erb:15: syntax error, unexpected kENSURE, expecting $end) on line #3 of app/views/documents/new.html.erb:
+1: <h1>New document</h1>
+2: 
+3: <% form_for (@document {:multipart => true}) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/documents/new.html.erb:15:in `compile!'
+    app/controllers/documents_controller.rb:30:in `new'
+
+Rendered rescues/_trace (56.2ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DocumentsController#new (for 127.0.0.1 at 2010-03-14 17:52:09) [GET]
+Rendering template within layouts/documents
+Rendering documents/new
+Completed in 20ms (View: 9, DB: 0) | 200 OK [http://localhost/documents/new]
+
+
+Processing DocumentsController#new (for 127.0.0.1 at 2010-03-14 17:53:30) [GET]
+Rendering template within layouts/documents
+Rendering documents/new
+Completed in 18ms (View: 7, DB: 0) | 200 OK [http://localhost/documents/new]
+
+
+Processing DocumentsController#new (for 127.0.0.1 at 2010-03-14 17:54:21) [GET]
+Rendering template within layouts/documents
+Rendering documents/new
+Completed in 16ms (View: 7, DB: 0) | 200 OK [http://localhost/documents/new]
+
+
+Processing DocumentsController#index (for 127.0.0.1 at 2010-03-14 17:56:05) [GET]
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM "documents" [0m
+Rendering template within layouts/documents
+Rendering documents/index
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://localhost/documents]
+
+
+Processing DocumentsController#index (for 127.0.0.1 at 2010-03-14 18:03:03) [GET]
+  [4;36;1mDocument Load (0.5ms)[0m   [0;1mSELECT * FROM "documents" [0m
+Rendering template within layouts/documents
+Rendering documents/index
+Completed in 17ms (View: 8, DB: 1) | 200 OK [http://localhost/documents]
+
+
+Processing DocumentsController#new (for 127.0.0.1 at 2010-03-14 18:03:04) [GET]
+Rendering template within layouts/documents
+Rendering documents/new
+Completed in 22ms (View: 8, DB: 0) | 200 OK [http://localhost/documents/new]
+
+
+Processing DocumentsController#create (for 127.0.0.1 at 2010-03-14 18:09:04) [POST]
+  Parameters: {"commit"=>"Upload", "title"=>"XML Test File 1", "authenticity_token"=>"gz/2oqNr2vUGTOOBsySsp61ePYWsvEeYFpxXDJZY1pQ=", "xml_file"=>#<File:/var/folders/XA/XAgea0RdG48acugfe5fqhE+++TI/-Tmp-/RackMultipart20100314-10837-1f55wr8-0>}
+
+NameError (undefined local variable or method `title' for #<DocumentsController:0x1043d1d28>):
+  app/controllers/documents_controller.rb:48:in `create'
+
+Rendered rescues/_trace (38.1ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DocumentsController#index (for 127.0.0.1 at 2010-03-14 18:09:16) [GET]
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM "documents" [0m
+Rendering template within layouts/documents
+Rendering documents/index
+Completed in 16ms (View: 6, DB: 1) | 200 OK [http://localhost/documents]
+
+
+Processing DocumentsController#new (for 127.0.0.1 at 2010-03-14 18:09:17) [GET]
+Rendering template within layouts/documents
+Rendering documents/new
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/documents/new]
+
+
+Processing DocumentsController#create (for 127.0.0.1 at 2010-03-14 18:09:28) [POST]
+  Parameters: {"commit"=>"Upload", "title"=>"XML Test File 1", "authenticity_token"=>"gz/2oqNr2vUGTOOBsySsp61ePYWsvEeYFpxXDJZY1pQ=", "xml_file"=>#<File:/var/folders/XA/XAgea0RdG48acugfe5fqhE+++TI/-Tmp-/RackMultipart20100314-10837-1sowmro-0>}
+
+ActionView::MissingTemplate (Missing template documents/create.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing DocumentsController#index (for 127.0.0.1 at 2010-03-14 18:09:50) [GET]
+  [4;36;1mDocument Load (0.5ms)[0m   [0;1mSELECT * FROM "documents" [0m
+Rendering template within layouts/documents
+Rendering documents/index
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://localhost/documents]
+
+
+Processing DocumentsController#new (for 127.0.0.1 at 2010-03-14 18:09:52) [GET]
+Rendering template within layouts/documents
+Rendering documents/new
+Completed in 13ms (View: 3, DB: 0) | 200 OK [http://localhost/documents/new]
+
+
+Processing DocumentsController#create (for 127.0.0.1 at 2010-03-14 18:10:01) [POST]
+  Parameters: {"commit"=>"Upload", "title"=>"XML Test File 1", "authenticity_token"=>"gz/2oqNr2vUGTOOBsySsp61ePYWsvEeYFpxXDJZY1pQ=", "xml_file"=>#<File:/var/folders/XA/XAgea0RdG48acugfe5fqhE+++TI/-Tmp-/RackMultipart20100314-10837-10e7t6p-0>}
+  [4;35;1mDocument Create (1.1ms)[0m   [0mINSERT INTO "documents" ("created_at", "title", "updated_at", "version", "content") VALUES('2010-03-14 22:10:02', 'XML Test File 1', '2010-03-14 22:10:02', 1, '<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070208822A1-20070906.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20070822" date-publ="20070906">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070208822</doc-number>
+<kind>A1</kind>
+<date>20070906</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11276483</doc-number>
+<date>20060301</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>G</section>
+<class>06</class>
+<subclass>F</subclass>
+<main-group>15</main-group>
+<subgroup>16</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070906</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>709217000</main-classification>
+</classification-national>
+<invention-title id="d0e102">Honey Monkey Network Exploration</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Wang</last-name>
+<first-name>Yi-Min</first-name>
+<address>
+<city>Bellevue</city>
+<state>WA</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Beck</last-name>
+<first-name>Douglas</first-name>
+<middle-name>R.</middle-name>
+<address>
+<city>Redmond</city>
+<state>WA</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>LEE &#x26; HAYES PLLC</name>
+<address>
+<address-1>421 W RIVERSIDE AVENUE SUITE 500</address-1>
+<city>SPOKANE</city>
+<state>WA</state>
+<postcode>99201</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+<assignees>
+<assignee>
+<addressbook>
+<orgname>Microsoft Corporation</orgname>
+<role>02</role>
+<address>
+<city>Redmond</city>
+<state>WA</state>
+<country>US</country>
+</address>
+</addressbook>
+</assignee>
+</assignees>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">A network can be explored to investigate exploitive behavior. For example, network sites may be actively explored by a honey monkey system to detect if they are capable of accomplishing exploits, including browser-based exploits, on a machine. Also, the accomplishment of exploits may be detected by tracing events occurring on a machine after visiting a network site and analyzing the traced events for illicit behavior. Alternatively, site redirections between and among uniform resource locators (URLs) may be explored to discover relationships between sites that are visited. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="131.89mm" wi="128.33mm" file="US20070208822A1-20070906-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="205.40mm" wi="185.42mm" file="US20070208822A1-20070906-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="219.88mm" wi="163.91mm" file="US20070208822A1-20070906-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="233.68mm" wi="177.21mm" file="US20070208822A1-20070906-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="249.09mm" wi="176.28mm" file="US20070208822A1-20070906-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00005" num="00005">
+<img id="EMI-D00005" he="251.88mm" wi="182.71mm" file="US20070208822A1-20070906-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00006" num="00006">
+<img id="EMI-D00006" he="230.38mm" wi="174.07mm" file="US20070208822A1-20070906-D00006.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00007" num="00007">
+<img id="EMI-D00007" he="248.24mm" wi="159.68mm" file="US20070208822A1-20070906-D00007.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00008" num="00008">
+<img id="EMI-D00008" he="223.01mm" wi="152.91mm" orientation="landscape" file="US20070208822A1-20070906-D00008.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00009" num="00009">
+<img id="EMI-D00009" he="252.81mm" wi="180.85mm" orientation="landscape" file="US20070208822A1-20070906-D00009.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00010" num="00010">
+<img id="EMI-D00010" he="206.67mm" wi="176.87mm" file="US20070208822A1-20070906-D00010.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0001">BACKGROUND </heading>
+<p id="p-0002" num="0001"> Computers are used to conduct business, acquire information, and experience entertainment by visiting sites on the internet. Unfortunately, some internet sites are designed to accomplish actions that are not requested by a user. These actions can result in harm to a computer and/or to the user of the computer. </p>
+<p id="p-0003" num="0002"> Malware is one term for software that can cause harm to a user. For example, malware may report relatively innocuous generic marketing-related information and/or reduce the performance of a computer in which it has been installed. However, malware can also damage or even destroy data files on a computer. Moreover, and perhaps most dangerously, malware can also be used to steal valuable personal or financial information. </p>
+<p id="p-0004" num="0003"> Malware may be installed without a user''s knowledge, or the full extent of a malware program''s functionality may be unknown to a user when installation is authorized. In any case, malware is typically software that a user would ultimately rather not have present, functional, or executing on his or her computer because of the attendant risks. Consequently, internet sites that wish to install malware have developed convoluted and secretive mechanisms for doing so without full knowledge of the user and even without first acquiring any authorization from a user. </p>
+<heading level="2" id="h-0002">SUMMARY </heading>
+<p id="p-0005" num="0004"> A network can be explored to investigate exploitive behavior. For example, network sites may be actively explored by a honey monkey system to detect if they are capable of accomplishing exploits, including browser-based exploits, on a machine. Also, the accomplishment of exploits may be detected by tracing events occurring on a machine after visiting a network site and analyzing the traced events for illicit behavior. Alternatively, site redirections between and among uniform resource locators (URLs) may be explored to discover relationships between the sites that are visited. </p>
+<p id="p-0006" num="0005"> This Summary is provided to introduce a selection of concepts in a simplified form that are further described below in the Detailed Description. This Summary is not intended to identify key features or essential features of the claimed subject matter, nor is it intended to be used as an aid in determining the scope of the claimed subject matter. Moreover, other method, system, scheme, apparatus, device, media, procedure, API, arrangement, etc. implementations are described herein.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0003">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0007" num="0006"> The same numbers are used throughout the drawings to reference like and/or corresponding aspects, features, and components. </p>
+<p id="p-0008" num="0007"> <figref idref="DRAWINGS">FIG. 1</figref> is a block diagram example of a honey monkey system that is capable of exploring a network. </p>
+<p id="p-0009" num="0008"> <figref idref="DRAWINGS">FIG. 2</figref> is a flow diagram that illustrates an example of a method for exploring a network with a honey monkey system. </p>
+<p id="p-0010" num="0009"> <figref idref="DRAWINGS">FIG. 3</figref> is a block diagram of an example honey monkey machine having a honey monkey controller and multiple virtual machines. </p>
+<p id="p-0011" num="0010"> <figref idref="DRAWINGS">FIG. 4</figref> is a flow diagram that illustrates an example of a method for using a black-box approach to detecting exploits with a honey monkey machine. </p>
+<p id="p-0012" num="0011"> <figref idref="DRAWINGS">FIG. 5</figref> is a block diagram of an example multi-phase approach to analyzing an exploit using software with different patch levels. </p>
+<p id="p-0013" num="0012"> <figref idref="DRAWINGS">FIG. 6</figref> is a block diagram of an example site visitation trace mechanism for a strider tracer module. </p>
+<p id="p-0014" num="0013"> <figref idref="DRAWINGS">FIG. 7</figref> is a flow diagram that illustrates an example of a method for generating a topology graph that shows relationships between and among sites that are involved in exploit behavior. </p>
+<p id="p-0015" num="0014"> <figref idref="DRAWINGS">FIG. 8</figref> is an example exploit topology graph showing relationships between and among sites that are involved in exploit behavior. </p>
+<p id="p-0016" num="0015"> <figref idref="DRAWINGS">FIG. 9</figref> illustrates an example honey monkey exploit detection system, which is shown inside the dashed-line rectangle, and a surrounding anti-exploit process, which includes both automatic and manual components. </p>
+<p id="p-0017" num="0016"> <figref idref="DRAWINGS">FIG. 10</figref> is a block diagram of an example device that may be employed in conjunction with honey monkey network exploration.</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0004">DETAILED DESCRIPTION </heading>
+<p id="p-0018" num="0017"> This detailed description is divided into four sections. The four sections are entitled &#x201c;Example General Implementations for Honey Monkey Network Exploration&#x201d;, &#x201c;Example Specific Implementations for Honey Monkey Network Exploration&#x201d;, &#x201c;A Specific Example Multi-Stage Implementation for a Honey Monkey Exploit Detection System&#x201d;, and &#x201c;Example Device Implementations for Honey Monkey Network Exploration&#x201d;. </p>
+<heading level="2" id="h-0005">Example General Implementations for Honey Monkey Network Exploration </heading>
+<p id="p-0019" num="0018"> <figref idref="DRAWINGS">FIG. 1</figref> is a block diagram <b>100</b> example of a honey monkey system <b>102</b> that is capable of exploring a network. Block diagram <b>100</b> includes honey monkey system <b>102</b>, a network, and multiple network locations. The network is represented by an internet <b>104</b>. However, any general network may alternatively be explored by honey monkey system <b>102</b>. The multiple network locations are represented by uniform resource locators (URLs) <b>106</b>. However, other identifiers of network locations or nodes may alternatively be used. </p>
+<p id="p-0020" num="0019"> As illustrated, honey monkey system <b>102</b> includes a browser <b>108</b> and a browser-based vulnerability exploit detector <b>110</b>. Internet <b>104</b> includes some number &#x201c;u&#x201d; of URLs <b>106</b>, with &#x201c;u&#x201d; being an integer. Specifically, internet <b>104</b> includes URL <b>106</b>(<b>1</b>), URL <b>106</b>(<b>2</b>) . . . URL <b>106</b>(<i>u</i>). URLs represent some location, node, etc. on internet <b>104</b>. An example location is a site on the so-called world wide web (WWW). </p>
+<p id="p-0021" num="0020"> An expanded diagram for URL <b>106</b>(<i>u</i>) includes a browser-based vulnerability exploiter <b>112</b>. Browser-based vulnerability exploiter <b>112</b> is capable of installing, creating, realizing, or otherwise accomplishing an exploit <b>114</b> during communication exchanges with honey monkey system <b>102</b>. These communication exchanges are represented by request/response exchanges <b>116</b>. Specifically, &#x201c;u&#x201d; request/response exchanges <b>116</b>(<b>1</b>), <b>116</b>(<b>2</b>) . . . <b>116</b>(<i>u</i>) occur between honey monkey system <b>102</b> and URL <b>106</b>(<b>1</b>), <b>106</b>(<b>2</b>) . . . <b>106</b>(<i>u</i>), respectively. </p>
+<p id="p-0022" num="0021"> In a described implementation, honey monkey system <b>102</b> actively explores internet <b>104</b> by sending an information request to a URL <b>106</b> in order to elicit a response as part of a request/response exchange <b>116</b>. Honey monkey system <b>102</b> uses browser <b>108</b> to make the request in order to emulate the appearance of a standard browsing environment, including any vulnerability or vulnerabilities that browser <b>108</b> might expose to URLs <b>106</b>. </p>
+<p id="p-0023" num="0022"> Standard responses are directed to browser <b>108</b> within honey monkey system <b>102</b>. However, suspect responses may be directed fully or partially to other software components. In operation, a so-called sandbox is created for browser <b>108</b>. Typically, a browser is capable of creating its own sandbox, and it does so automatically to limit what changes the components loaded into the browser process can make during normal operations. When accomplishing an exploit <b>114</b>, the suspect responses usually extend beyond the browser sandbox. In an example implementation, events that extend beyond the browser sandbox are detectable by browser-based vulnerability exploit detector <b>110</b>. An example of an exploit <b>114</b> is the installation of malware. Malware examples are described further herein below. </p>
+<p id="p-0024" num="0023"> By way of specific example, honey monkey system <b>102</b> directs browser <b>108</b> to visit URL <b>106</b>(<i>u</i>) by requesting information from URL <b>106</b>(<i>u</i>) as a result of a redirection <b>120</b> from URL <b>106</b>(<b>2</b>). A user actually intends to visit URL <b>106</b>(<b>2</b>). However, URL <b>106</b>(<b>2</b>) responds with the requested information and additionally instructs the browser to visit URL <b>106</b>(<i>u</i>), which constitutes an example redirection <b>120</b>. The exploiter served by URL <b>106</b>(<i>u</i>) is the requested information with respect to URL <b>106</b>(<i>u</i>). In short, URL <b>106</b>(<i>u</i>) is a bad actor and includes browser-based vulnerability exploiter <b>112</b>. As at least part of request/response exchange <b>116</b>(<i>u</i>), URL <b>106</b>(<i>u</i>) activates browser-based vulnerability exploiter <b>112</b>. Browser-based vulnerability exploiter <b>112</b> accomplishes exploit <b>114</b> at exploit realization <b>118</b>. Exploit realization <b>118</b> may be execution of some code, installation of a program, creation or modification of a file, creation or adjustment to a registry setting, some combination thereof, and so forth. </p>
+<p id="p-0025" num="0024"> Honey monkey system <b>102</b> uses browser-based vulnerability exploit detector <b>110</b> to detect exploit <b>114</b>. Example detection mechanisms are described further herein below. Examples include a black-box/event tracing mechanism and a vulnerability-specific exploit detection mechanism. The former is described with particular reference to the flow diagram of <figref idref="DRAWINGS">FIG. 4</figref>. </p>
+<p id="p-0026" num="0025"> <figref idref="DRAWINGS">FIG. 2</figref> is a flow diagram <b>200</b> that illustrates an example of a method for exploring a network with a honey monkey system. Flow diagram <b>200</b> includes six (6) blocks <b>202</b>-<b>212</b>. Although the actions of flow diagram <b>200</b> may be performed in other environments and with a variety of hardware and software combinations, a honey monkey system <b>102</b> (of <figref idref="DRAWINGS">FIG. 1</figref>) may be used to implement the method of flow diagram <b>200</b>. </p>
+<p id="p-0027" num="0026"> At block <b>202</b>, a URL is selected. For example, a honey monkey system <b>102</b> may select a URL <b>106</b>(<i>u</i>). Honey monkey system <b>102</b> may also provide the selected URL <b>106</b>(<i>u</i>) to a browser <b>108</b> along with an instruction to point the browser at the selected URL <b>106</b>(<i>u</i>). </p>
+<p id="p-0028" num="0027"> At block <b>204</b>, an information request is sent to the selected URL. For example, browser <b>108</b> may target the selected URL <b>106</b>(<i>u</i>) by sending an information request thereto. At block <b>206</b>, a response is received from the targeted URL. For example, browser <b>108</b> may receive a response from the targeted URL <b>106</b>(<i>u</i>) as part of a request/response exchange <b>116</b>. If URL <b>106</b>(<i>u</i>) includes a browser-based vulnerability exploiter <b>112</b>, then the machine or device upon which honey monkey system <b>102</b> is executing may also &#x201c;receive&#x201d; an exploit <b>114</b> as a result of an exploit realization <b>118</b>. </p>
+<p id="p-0029" num="0028"> At block <b>208</b>, an exploit detection is performed. For example, a browser-based vulnerability exploit detector <b>110</b> of honey monkey system <b>102</b> may attempt to detect if any exploit <b>114</b> has been accomplished (e.g., realized). At block <b>210</b>, it is determined if an exploit is detected. If not, then another URL is selected (at block <b>202</b>). For example, the other URL may be contacted with a newly-launched browser (at block <b>204</b>). </p>
+<p id="p-0030" num="0029"> If, on the other hand, an exploit is detected (at block <b>210</b>), then at block <b>212</b> the detected exploit is analyzed. The analysis may optionally involve visiting URLs listed in a history of URLs that were visited as a result of browser redirection. The analysis may also optionally involve visiting the redirect URLs with a redirection blocking feature enabled so as to narrow down and actually identify pages that truly perform the exploits. Examples of redirection analysis are described further herein below with particular reference to <figref idref="DRAWINGS">FIGS. 6-8</figref>. </p>
+<heading level="2" id="h-0006">Example Specific Implementations for Honey Monkey Network Exploration </heading>
+<p id="p-0031" num="0030"> Example general implementations are described in the preceding section, and example specific implementations are described in this section as well as in the following section. However, the general and specific implementations are not mutually exclusive. By way of example only, aspects of specific implementation(s) may be incorporated into a general implementation. For instance, a honey monkey controller <b>304</b> and a virtual machine <b>306</b> (both of <figref idref="DRAWINGS">FIG. 3</figref> as described herein below) may comprise all or part of a honey monkey system <b>102</b>. Also, a honey monkey system <b>102</b> may incorporate some or all of the patch-escalation exploit analysis features described herein below with particular reference to <figref idref="DRAWINGS">FIG. 5</figref>. Furthermore, aspects of the specific implementations may be combined in many different manners. For example, the virtual machine concepts of <figref idref="DRAWINGS">FIG. 3</figref> may be combined with the redirection analysis of <figref idref="DRAWINGS">FIGS. 6-8</figref>. </p>
+<heading level="2" id="h-0007">Example Virtual Machine Implementations </heading>
+<p id="p-0032" num="0031"> <figref idref="DRAWINGS">FIG. 3</figref> is a block diagram of an example honey monkey machine <b>302</b> having a honey monkey controller <b>304</b> and multiple virtual machines <b>306</b>. As illustrated, honey monkey machine <b>302</b> includes &#x201c;v&#x201d; virtual machines <b>306</b>(<b>1</b>), <b>306</b>(<b>2</b>) . . . <b>306</b>(<i>v</i>), with &#x201c;v&#x201d; being some integer. An example device that may comprise such a honey monkey machine <b>302</b> is described herein below with particular reference to <figref idref="DRAWINGS">FIG. 10</figref>. </p>
+<p id="p-0033" num="0032"> The integer &#x201c;v&#x201d; may have any value of one or higher. So-called heavy-weight virtual machine products may be capable of having two, three, eight, or more virtual machines running on a single physical machine. So-called light-weight virtual machine products may be capable of having tens to even thousands of virtual machines running on a single physical machine. </p>
+<p id="p-0034" num="0033"> In a described implementation, honey monkey controller <b>304</b> instantiates the &#x201c;v&#x201d; virtual machines <b>306</b>. Each virtual machine <b>306</b> includes a honey monkey module <b>308</b>, a strider tracer module <b>310</b>, and browser <b>108</b>. Although illustrated separately, honey monkey module <b>308</b> and strider tracer module <b>310</b> may reside in the same process. Moreover, honey monkey module <b>308</b> may be realized as two or more modules. For example, one module may reside in kernel mode as a driver, and the other module may reside in user mode as a dynamic-linked library (DLL) that is loaded into the process module. In operation, honey monkey module <b>308</b> directs browser <b>108</b> to engage in request/response exchanges <b>116</b> with URLs <b>106</b>. During and/or afterwards, honey monkey module <b>308</b> performs an exploit detection procedure to determine if an exploit was accomplished by a URL <b>106</b>. </p>
+<p id="p-0035" num="0034"> The exploit detection procedure is effected, at least in part, by inspecting a trace file created by strider tracer module <b>310</b>. Strider tracer module <b>310</b> is adapted to trace certain events (e.g., operations, actions, etc.) within a given machine (be it a virtual machine or a real machine). For example, the following events may be traced: registry writes, file writes, process creations, some combination thereof, and so forth. When it is ascertained from the trace file that an illicit event has occurred, honey monkey module <b>308</b> determines that an exploit has been detected. An example of creation(s), termination(s), interactions, etc. between and among the various components of honey monkey machine <b>302</b> is described further below with particular reference to <figref idref="DRAWINGS">FIG. 4</figref>. </p>
+<p id="p-0036" num="0035"> <figref idref="DRAWINGS">FIG. 4</figref> is a flow diagram <b>400</b> that illustrates an example of a method for using a black-box approach to detecting exploits with a honey monkey machine. The illustrated black-box approach is trace driven. Flow diagram <b>400</b> includes thirteen (13) blocks <b>402</b>-<b>426</b>. Although the actions of flow diagram <b>400</b> may be performed in other environments and with a variety of hardware and software combinations, a honey monkey machine <b>302</b> (of <figref idref="DRAWINGS">FIG. 3</figref>) may be used to implement the method of flow diagram <b>400</b>. </p>
+<p id="p-0037" num="0036"> At block <b>402</b>, a honey monkey (HM) controller starts a virtual machine (VM). For example, a honey monkey controller <b>304</b> of a honey monkey machine <b>302</b> may start a virtual machine <b>306</b>(<b>1</b>). At block <b>404</b>, the honey monkey controller starts a honey monkey module and a strider tracer (ST) module. For example, honey monkey controller <b>304</b> may start a honey monkey module <b>308</b> and a strider tracer module <b>310</b>. Alternatively, honey monkey module <b>308</b> may be configured to auto-start with the operating system. Strider tracer module <b>310</b> begins tracing events within virtual machine <b>306</b>(<b>1</b>) to create a trace log. </p>
+<p id="p-0038" num="0037"> At block <b>406</b>, the honey monkey module launches a browser. For example, honey monkey module <b>308</b> may launch a browser <b>108</b>. Honey monkey module <b>308</b> also provides a URL, such as URL <b>106</b>(<i>u</i>), to browser <b>108</b>. A URL list may be provided to honey monkey module <b>308</b> from honey monkey controller <b>304</b>. </p>
+<p id="p-0039" num="0038"> At block <b>408</b>, the browser requests information from the targeted URL. For example, browser <b>108</b> may visit URL <b>106</b>(<i>u</i>) by requesting information from it as part of a request/response exchange <b>116</b>(<i>u</i>). In an exploit scenario, the browser visitation is likely the result of a redirection, or more specifically a cross-domain auto-visit. At block <b>410</b>, the browser receives a response from the targeted URL. For example, browser <b>108</b> may receive a response from URL <b>106</b>(<i>u</i>). The response may or may not involve the accomplishment of an exploit <b>114</b> (of <figref idref="DRAWINGS">FIG. 1</figref>). </p>
+<p id="p-0040" num="0039"> As part of a black-box approach, the honey monkey module waits a predetermined time period at block <b>412</b>. For example, honey monkey module <b>308</b> may wait a predetermined time period such as one minute, two minutes, five minutes, or some other duration. The longer the duration, the greater the likelihood that any intended exploit will be accomplished during the predetermined time period, and thus be efficiently detectable by this black-box approach. On the other hand, the longer the duration of the predetermined time period, the fewer the number of URLs <b>106</b> that may be explored each hour, each day, and so forth. </p>
+<p id="p-0041" num="0040"> After expiration of the predetermined time period (at block <b>412</b>), the honey monkey module provides a trace file to the honey monkey controller at block <b>414</b>. For example, honey monkey module <b>308</b> may provide a trace file that is produced by strider tracer module <b>310</b> to honey monkey controller <b>304</b>. At block <b>416</b>, the honey monkey controller analyzes the trace file that is produced by the strider tracer module. For example, honey monkey controller <b>304</b> may inspect a trace file created by strider tracer module <b>310</b> to detect the occurrence of events (e.g., file accesses, processing operations, etc.) that extend beyond the bounds of a browser sandbox. </p>
+<p id="p-0042" num="0041"> At block <b>418</b>, it is determined by the honey monkey controller if an illicit event is evident from the trace file. If not, then at block <b>420</b> a next URL is selected. For example, honey monkey module <b>308</b> may provide another URL <b>106</b> to a newly-launched browser <b>108</b> (at block <b>406</b>). A new browser process is launched for each URL so that the process ID can be correlated to the URL in the output trace files because the processes are more easily traceable. If, on the other hand, an illicit event is evidenced from the trace file to have occurred (as determined at block <b>418</b>), then the method of flow diagram <b>400</b> continues at block <b>422</b>. </p>
+<p id="p-0043" num="0042"> At block <b>422</b>, the honey monkey controller terminates the associated virtual machine. For example, in response to detection of an exploit, honey monkey controller <b>304</b> terminates the virtual machine <b>306</b>(<b>1</b>) that is associated with the honey monkey module <b>308</b> that is operating the exploited browser <b>108</b>. At block <b>424</b>, the honey monkey controller restarts the virtual machine with a clean state. For example, honey monkey controller <b>304</b> may restart the affected virtual machine <b>306</b>(<b>1</b>) at a state that existed prior to beginning the request/response exchange <b>116</b>(<i>u</i>) with the responsible URL <b>106</b>(<i>u</i>). </p>
+<p id="p-0044" num="0043"> Furthermore, the virtual machine state may revert all the way back to a state prior to beginning any request/response exchanges <b>116</b> that are initiated for a batch of URLs. A batched network exploration approach is described further herein below. Moreover, the virtual machine state may be restarted from a saved fully clean state that existed before any honey monkey-initiated request/responses to avoid the risk of contamination and because restarting from a clean state is relatively fast. When the virtual machine is started from a saved state, the honey monkey module may be suspended in an input wait state. </p>
+<p id="p-0045" num="0044"> At block <b>426</b>, the URL that is responsible for the exploit is assigned for further analysis or other action. For example, recursive redirection analysis may be performed on URL <b>106</b>(<i>u</i>). Such recursive redirection analysis is described further herein below with particular reference to <figref idref="DRAWINGS">FIGS. 6-8</figref>. Examples of other actions that may be taken to combat an exploitive URL are described herein below with particular reference to <figref idref="DRAWINGS">FIG. 9</figref>. </p>
+<heading level="2" id="h-0008">Example Multi-Phase Exploit Analysis Implementations </heading>
+<p id="p-0046" num="0045"> <figref idref="DRAWINGS">FIG. 5</figref> is a block diagram <b>500</b> of an example multi-phase approach to analyzing an exploit using software <b>502</b> with different patch levels. Software may be considered to have a life span with different phases. In a first phase, software is issued in an initial version. Typically, a software program in its initial version has multiple vulnerabilities that may be taken advantage of by exploits. The software can be patched to plug or remove these vulnerabilities. </p>
+<p id="p-0047" num="0046"> Over the lifetime of a given software program, more than one patch is often issued to update the software multiple times. At each phase or iteration as software migrates from lower patched software versions to higher patched software versions, the software generally becomes less susceptible to exploits and thus more secure. At any given moment, there is a software program having the latest update that may be considered the fully-patched software version. </p>
+<p id="p-0048" num="0047"> As illustrated, block diagram <b>500</b> includes software <b>502</b> in four (4) different versions. These four versions are: un-patched software <b>502</b>(UP) that is the initial version, partially-patched software <b>502</b>(PP<b>1</b>) that includes a first update, partially-patched software <b>502</b>(PP<b>2</b>) that also includes a second update, and fully-patched software <b>502</b>(FP) that includes the latest update and represents the most recent version. Although four different versions of the software program <b>502</b> are illustrated in block diagram <b>500</b> and are described herein, fewer than four or more than four different versions may alternatively be in effect for a given software program <b>502</b>. </p>
+<p id="p-0049" num="0048"> Partially-patched software <b>502</b>(PP<b>1</b>) having the first update is generally less susceptible to exploits than un-patched software <b>502</b>(UP). Partially-patched software <b>502</b>(PP<b>2</b>) that has the first and second updates is generally less susceptible to exploits than partially-patched software <b>502</b>(PP<b>1</b>) that has only the first update. The fully-patched software <b>502</b>(FP) that has the latest update is generally the least susceptible to exploits. </p>
+<p id="p-0050" num="0049"> Software <b>502</b> may comprise a browser <b>108</b> (of <figref idref="DRAWINGS">FIGS. 1 and 3</figref>), an operating system (not explicitly shown), some other software program, some combination thereof, and so forth. To determine if software <b>502</b> is vulnerable to an exploit from a given URL <b>106</b>, the given URL <b>106</b> is visited, and the occurrence of an exploit is detected as described herein. Generally, when a certain exploit is detected, the honey monkey system escalates the investigation of the given URL <b>106</b> in phases by visiting it with software <b>502</b> having an ever increasing patch level. When a particular patch level is first reached that is not vulnerable to the detected exploit, then it can be inferred that that particular patch level fixes the vulnerability attacked by the detected exploit. </p>
+<p id="p-0051" num="0050"> In block diagram <b>500</b>, a given URL <b>106</b> is first visited using un-patched software <b>502</b>(UP). If an exploit is not detected (at star <b>504</b>), then no escalation (block <b>506</b>) is involved because even the most susceptible version of software <b>502</b> is not the victim of (i.e., is not successfully attacked by) an exploit. (Or, in most cases, URL <b>106</b> is not a malicious URL, so no attack was actually attempted.) If an exploit is detected (at star <b>504</b>), then the exploit investigation is escalated by using a partially-patched software <b>502</b>(PP<b>1</b>) version that includes a first update. </p>
+<p id="p-0052" num="0051"> Thus, partially-patched software <b>502</b>(PP<b>1</b>) visits the given URL <b>106</b>. If an exploit is not detected (at star <b>508</b>), then it is apparent (at block <b>510</b>) that the exploited vulnerability in software <b>502</b> is fixed by the first update. If an exploit is detected (at star <b>508</b>), then the exploit investigation is further escalated at yet another phase by using a partially-patched software <b>502</b>(PP<b>2</b>) version that includes a second update, which incorporates the first update in this example. </p>
+<p id="p-0053" num="0052"> Thus, partially-patched software <b>502</b>(PP<b>2</b>) that includes the second update visits the given URL <b>106</b>. If an exploit is not detected (at star <b>512</b>), then it is apparent (at block <b>514</b>) that the exploited vulnerability in software <b>502</b> is fixed by the second update. If an exploit is detected (at star <b>512</b>), then the exploit investigation is further escalated by using a fully-patched software <b>502</b>(FP) version that includes the latest update. </p>
+<p id="p-0054" num="0053"> Thus, fully-patched software <b>502</b>(FP) that includes the latest update visits the given URL <b>106</b>. If an exploit is not detected (at star <b>516</b>), then it is apparent (at block <b>518</b>) that the exploited vulnerability in software <b>502</b> is fixed by the latest update. If an exploit is detected (at star <b>516</b>), then it is apparent that a so-called zero-day exploit has been detected (at block <b>520</b>). A zero-day exploit is considered to be an exploit that exists before the patch for the exploited vulnerability is released. The vulnerability related to the zero-day exploit can be known or unknown generally (e.g., to the public) at the time of detecting the zero-day exploit. </p>
+<heading level="2" id="h-0009">Example Implementations of Analyses of Sites Involved in Exploits </heading>
+<p id="p-0055" num="0054"> <figref idref="DRAWINGS">FIG. 6</figref> is a block diagram of an example site visitation trace mechanism <b>600</b> for a strider tracer module <b>310</b>. As illustrated, browser <b>108</b> visits four (4) sites as represented by URLS <b>106</b>(A), <b>106</b>(B), <b>106</b>(C), and <b>106</b>(D). These site visitations include three (3) redirections <b>602</b>(<b>1</b>), <b>602</b>(<b>2</b>), and <b>602</b>(<b>3</b>). Strider tracer module <b>310</b> is capable of tracing these four (4) site visitations and producing trace file <b>604</b>. Trace file <b>604</b> includes, possibly in addition to other events that have been traced, a visited URL list <b>606</b> having four entries. These four entries are URL <b>106</b>(A), URL <b>106</b>(B), URL <b>106</b>(C), and URL <b>106</b>(D). </p>
+<p id="p-0056" num="0055"> In a described implementation, strider tracer module <b>310</b> traces the actions that occur within the machine, including URL redirections. Alternatively, the URL redirections may be traced by a separate module, or they may be separated into sub-modules, and so forth. Regardless, URL tracing may be accomplished at any of several possible layers. Examples include implementing the URL tracer as a DLL that loads into the browser and implementing the URL tracer as a proxy, which may be implemented as a service or some separate executable. For instance, a proxy may register itself with the system and have browser http requests routed through the proxy. Another example is implementing and installing a Winsock Layered Service provider, which is a type of DLL. This provider intercepts network traffic on the machine and inspects and traces the traffic generated from the browser. Another example is implementing a driver that intercepts network traffic at the kernel level. </p>
+<p id="p-0057" num="0056"> Site redirection is a browser concept that enables a browser to be redirected from one site to one or more other sites. It is capable of providing modularity on the internet. The redirection may occur without the authorization, or even knowledge, of the user. Especially when the site redirection occurs without the knowledge of the user, redirection may be more precisely termed a &#x201c;cross-domain auto-visit&#x201d;. For most exploit scenarios, the page content stays at the URL to which the user originally directed a browser while the other URL(s) are being auto-visited by the browser under the cover. Although there are legitimate purposes to redirection that benefit web site operators and browser users alike, site redirection can also be used for nefarious purposes. For example, it is often used by exploit providers to hide their identity and/or make exploit detection more difficult to track and prevent. The exploit &#x201c;experts&#x201d; pay provider sites to redirect clients to their exploitive sites. Malware development companies then pay exploiters to install their software. </p>
+<p id="p-0058" num="0057"> As illustrated, browser <b>108</b> is directed by a user to visit URL <b>106</b>(A). The information (e.g., hypertext markup language (HTML) data) that is received from URL <b>106</b>(A) causes browser <b>108</b> to be redirected <b>602</b>(<b>1</b>) to URL <b>106</b>(B). The information received from URL <b>106</b>(B) causes browser <b>108</b> to be redirected to URL <b>106</b>(C). The information received from URL <b>106</b>(C) causes browser <b>108</b> to be redirected to URL <b>106</b>(D). One or more of these URLs <b>106</b>(A), <b>106</b>(B), <b>106</b>(C), and <b>106</b>(D) may attempt (whether or not successfully) to accomplish an exploit. Although not so illustrated by the redirection chain of <figref idref="DRAWINGS">FIG. 6</figref>, information received from a single URL <b>106</b> may cause multiple redirections <b>602</b> to multiple other URLs <b>106</b>. Situations in which a single URL <b>106</b> initiates multiple auto-visits of other URLs may be envisioned as a branching tree of redirections. These are also handled by site visitation trace mechanism <b>600</b> with strider tracer module <b>310</b>. </p>
+<p id="p-0059" num="0058"> As described herein above, strider tracer module <b>310</b> traces events that occur within a system. These events are logged into trace file <b>604</b>. In addition to file reads/writes registry changes, etc., strider tracer module <b>310</b> traces the sites that are visited by browser <b>108</b>. It traces URLs <b>106</b> that are visited directly and those that are visited indirectly via redirections <b>602</b>. These traced sites are included in visited URL list <b>606</b> as part of trace file <b>604</b>. The traced sites may be further divided between directly-visited sites (e.g., URL <b>106</b>(A)) and indirectly-visited or redirected sites (e.g., URLs <b>106</b>(B), <b>106</b>(C), <b>106</b>(D)). Also, each may be listed separately, directly-visited sites may be excluded, and so forth. </p>
+<p id="p-0060" num="0059"> By further investigating the URLs <b>106</b> included within URL list <b>606</b>, site (and page) interrelationships can be gleaned. The knowledge of such interrelationships can be magnified if combined with other visited URL lists <b>606</b> from other trace files <b>604</b>. Moreover, the complexity of interrelationships between content providers and exploit providers can be further illuminated if visited URL lists <b>606</b> are recursively analyzed. </p>
+<p id="p-0061" num="0060"> For example, each URL <b>106</b> that is listed in visited URL list <b>606</b> can be fed back into the honey monkey system in order to direct a browser <b>108</b> to visit each of them. Visitation of each of these URLs <b>106</b> produces a new visited URL list <b>606</b>. These new visited URL lists <b>606</b> are likewise visited. This recursive process continues for each branch until URLs that are included on a visited URL list <b>606</b> does not produce any redirections. The result is a dynamically generated tree in which each node is visited down each branch until each leaf is reached. Such a tree may be traversed depth first or breadth first. </p>
+<p id="p-0062" num="0061"> In other words, visiting each URL <b>106</b> on a visited URL list <b>606</b> creates another visited URL list <b>606</b>. For this reason, generational terminology (e.g., parent-child-grandchild) is adopted to describe in greater detail this recursive analysis of visited URL lists <b>606</b>. More specifically, an initial visited URL list <b>606</b> that is generated from a general pool of URLs is termed the parent visited URL list. Visited URL lists that are generated by visiting individual URLs <b>106</b> on the parent visited URL list are termed child visited URL lists. The URLs listed on the child visited URL lists are termed child URLs. Visited URL lists that are generated by visiting individual child URLs <b>106</b> on a child visited URL list are termed grandchild visited URL lists that are populated with grandchildren URLs. The process continues recursively until a child, grandchild, great-grandchild, etc. does not beget another visited URL list <b>606</b>. </p>
+<p id="p-0063" num="0062"> <figref idref="DRAWINGS">FIG. 7</figref> is a flow diagram <b>700</b> that illustrates an example of a method for generating a topology graph that shows relationships between and among sites that are involved in exploit behavior. Flow diagram <b>700</b> includes eight (8) blocks <b>702</b>-<b>716</b>. Although the actions of flow diagram <b>700</b> may be performed in other environments and with a variety of hardware and software combinations, a site visitation trace mechanism <b>600</b> (of <figref idref="DRAWINGS">FIG. 6</figref>) is used to further illuminate the method of flow diagram <b>700</b>. Flow diagram <b>700</b> is a recursive method that takes a visited URL list <b>606</b> and deems it a parent visited URL list that can be used to create children visited URL lists. </p>
+<p id="p-0064" num="0063"> At block <b>702</b>, a parent visited URL list is extracted from a trace file. For example, a visited URL list <b>606</b> may be extracted from a trace file <b>604</b>. At block <b>704</b>, the first URL of the parent visited URL list is visited. In this example, the parent visited URL list is divided between directly-visited site(s) and indirectly-visited or redirected site(s). When focusing on the redirections in a recursive analysis, the directly-visited site is ignored and the first redirected site in the listing is visited. In accordance with the example of <figref idref="DRAWINGS">FIG. 6</figref>, the site of URL <b>106</b>(B) is thus visited for block <b>704</b>. </p>
+<p id="p-0065" num="0064"> At block <b>706</b>, a child visited URL list is produced. For example, a child visited URL list (not separately shown) is produced as a result of directly visiting URL <b>106</b>(B) of the parent visited URL list <b>606</b>. At block <b>708</b>, each child URL of the child visited URL list is recursively visited, too. In other words, each visited child URL may beget a grandchild visited URL list that includes one or more grandchildren URLs. The sites listed on the grandchildren URL lists that are created by visiting each child URL of the child visited URL list are also visited. The recursive process continues until each child URL, grandchild URL, great-grandchild URL, etc. does not beget another visited URL list <b>606</b>. </p>
+<p id="p-0066" num="0065"> At block <b>710</b>, site, page, and redirection relationships are recorded. For example, the sites that are visited, the pages that they host or serve, and the redirections between and among them may be stored into memory for subsequent manipulation (e.g., automated analysis, graphing of the data, etc.). </p>
+<p id="p-0067" num="0066"> At block <b>712</b>, it is determined if all of the parent URLs of the parent visited URL list have been visited. If not then the next parent URL of the parent visited URL list is selected (at block <b>714</b>) and the method of flow diagram <b>700</b> continues from block <b>706</b>. </p>
+<p id="p-0068" num="0067"> If, on the other hand, all of the parent URLs of the parent visited URL list have been visited (as determined at block <b>712</b>), then a topology graph of URL redirection relationships is created at block <b>716</b>. For example, the site redirections <b>602</b> between and among different sites and their hosted pages may be indicated in a topology graph. Sites may be identified as being content provider sites or exploit provider sites. An example topology graph is described below with particular reference to <figref idref="DRAWINGS">FIG. 8</figref>. </p>
+<p id="p-0069" num="0068"> <figref idref="DRAWINGS">FIG. 8</figref> is an example exploit topology graph <b>800</b> showing relationships between and among sites that are involved in exploit behavior. As illustrated, topology graph <b>800</b> includes site nodes <b>802</b> that are represented by circles and page nodes <b>804</b> that are represented by rectangles. Redirections are represented by thick arrows <b>602</b>. There are content provider site nodes <b>802</b>(CP) and exploit provider site nodes <b>802</b>(EP). There are also content provider page nodes <b>804</b>(CP) and exploit provider page nodes <b>804</b>(EP). </p>
+<p id="p-0070" num="0069"> Generally, page nodes may be differentiated from site nodes by varying the shape, color, size, some combination thereof, etc. of the symbols representing the nodes. Also, the serving relationship between sites and pages may be differentiated from redirection relationships by line style, by color, by line thickness, by some combination thereof, and so forth. Other connection relationships may be similarly indicated and/or differentiated. The number of connection relationships (e.g., serving, redirection, etc.) between nodes, both connecting to a given node and emanating therefrom, may be indicated by the node symbol. In the illustrated topology graph <b>800</b>, the size of the symbol indicates this overall connectedness, but other changes to the symbols may alternatively be employed. </p>
+<p id="p-0071" num="0070"> Specifically, topology graph <b>800</b> is actually indicative of an example real-world analysis of interrelationships between sites and pages that are involved in exploits. Specifically, there were 17 exploit-URLs layered over 10 sites. Rectangular nodes <b>804</b> represent individual exploit-URLs. Thick solid arrows between rectangles represent automatic traffic redirections <b>602</b>. Circles represent site nodes <b>802</b> that act as an aggregation point for all exploit pages hosted on that site, with each site node <b>802</b> having a relatively thinner edge or line connecting each of its hosted child-page rectangles <b>804</b>. Page nodes <b>804</b>(CP) that do not receive redirected traffic are most likely those of content providers. Page nodes <b>804</b>(EP) that do receive traffic from multiple exploit sites (e.g., the large rectangle R near the bottom of the graph) are most likely those of exploit providers. </p>
+<p id="p-0072" num="0071"> The size of a node is proportional to the number of cross-site arrows directly connected to it, both incoming and outgoing. Such size/numbers provide a good indication of the relative popularity of exploit-URLs and sites. This popularity measure is referred to as being based on connection counts. It is clear from the picture that the large rectangle R and its associated circle C have the highest connection counts. Consequently, blocking access to such a site would likely be the most effective starting point for combating malware realized from the analyzed URLs because it would disrupt nearly half of the exploit network graphed in <figref idref="DRAWINGS">FIG. 8</figref>. </p>
+<p id="p-0073" num="0072"> Two example ranking algorithms that help prioritize the investigations of large-scale topology graphs are described. Examples of such large-scale topology graphs are those with hundreds, thousands, or even more URLs and/or sites. Site-ranking can be based on connection counts and/or on the number of hosted exploit-URLs. </p>
+<p id="p-0074" num="0073"> With respect to site-ranking based on connection counts, each site may be ranked according to the number of connections to and from a site. With a bar graph, for example, a bar height for a given site indicates how many other sites the given site has a direct traffic-redirection relationship with. Hence, the bar height likely reflects how entrenched a site owner is within the exploit community. </p>
+<p id="p-0075" num="0074"> By way of example only, the bar for a given site may also be divided into segments of different filling (e.g., pattern and/or color). For instance, a segment of a first color may represent the number of sites that redirect traffic to the given site. A segment of a second color represents the number of sites to which traffic is redirected from the given site. A segment of a third color indicates the number of sites that have a two-way traffic redirection relationship with the given site. </p>
+<p id="p-0076" num="0075"> Site ranking, categorization, and grouping can play a key role in the anti-exploit process because they serve as the basis for deciding the most effective resource allocation for monitoring, investigating, blocking, and legal actions. For example, exploit sites that are highly-ranked in a site-ranking graph should be heavily monitored because a zero-day exploit page connected to any one of them is likely to affect a large number of web sites. Similarly, legal investigations should focus on the top exploit providers, rather than on the content providers that are mere traffic redirectors and do not actually perform exploits themselves. </p>
+<p id="p-0077" num="0076"> With respect to site-ranking based on the number of hosted exploit-URLs, each site often hosts more than one exploit URL. On a bar graph for example, each site may have a bar entry with the size of the bar dependent on the number of hosted exploit-URLs. This type of ranking helps highlight those web sites whose internal page hierarchy provides important exploit-provider operational insights. First, some web sites host a large number of exploit pages with a well-organized hierarchical structure. Second, some &#x201c;sophisticated&#x201d; web sites use transient URLs that contain random strings. </p>
+<heading level="2" id="h-0010">A Specific Example Multi-Stage Implementation for a Honey Monkey Exploit Detection System </heading>
+<p id="p-0078" num="0077"> The described example specific honey monkey exploit detection system attempts to automatically detect and analyze a network of web sites that exploit web browsers. Aspects of the specific example system described in this section may also be incorporated into the example implementations described herein above. </p>
+<p id="p-0079" num="0078"> <figref idref="DRAWINGS">FIG. 9</figref> illustrates an example honey monkey exploit detection system <b>102</b>*, which is shown inside the dashed-line rectangle, and a surrounding anti-exploit process, which includes both automatic and manual components <b>906</b>. In a described implementation, honey monkey exploit detection system <b>102</b>* includes three stages and receives inputs <b>902</b> and produces outputs <b>904</b>. Multiple example components of an anti-exploit process are shown at <b>906</b>. </p>
+<p id="p-0080" num="0079"> As illustrated, honey monkey exploit detection system <b>102</b>* receives a list of &#x201c;interesting&#x201d; URLs as input <b>902</b>(A) as well as a semi-recursive depth-N crawling of a given exploit URL input <b>902</b>(B). Three outputs <b>904</b> are also shown. These three outputs are: exploit URLs output <b>904</b>(A), topology graph of exploit URLs <b>904</b>(B), and topology graphs of zero-day or latest-patched-vulnerability exploit URLs <b>904</b>(C). </p>
+<heading level="2" id="h-0011">Browser-Based Vulnerability Exploits </heading>
+<p id="p-0081" num="0080"> By way of example only, malicious activities performed by actual web sites exploiting browser vulnerabilities can be divided into four steps: code obfuscation, URL redirection, vulnerability exploitation, and malware installation. </p>
+<p id="p-0082" num="0081"> Code Obfuscation: To complicate investigation and to escape signature-based scanning by anti-virus/anti-spyware software, some web sites use a combination of the following code obfuscation techniques: (1) dynamic code injection using the document.write( ) function inside a script; (2) unreadable, long strings with encoded characters such as &#x201c;%28&#x201d;, &#x201c;&#x26;#104&#x201d;, etc. that are then decoded either by the unescape( ) function inside a script or by the browser; (3) custom decoding routine included in a script; and (4) sub-string replacement using the replace( ) function. Because code-obfuscation is a common technique, it limits the ability of attack-signature-based detectors to detect new attacks that leverage old exploit code. </p>
+<p id="p-0083" num="0082"> URL Redirection: Most malicious web sites automatically redirect browser traffic to additional URLs. Specifically, when a browser visits a primary URL, the response from that URL instructs the browser to automatically visit one or more secondary URLs. This redirection may or may not affect the content that is displayed to the user. Such redirections typically use one of the following mechanisms classified into three categories: (1) protocol redirection using HTTP <b>302</b> Temporary Redirect; (2) HTML tags including &#x3c;iframe&#x3e;, &#x3c;frame&#x3e; inside &#x3c;frameset&#x3e;, and &#x3c;META http-equiv=refresh&#x3e;; (3) script functions including window.location.replace( ), window.location.href( ), window.open( ), window.showModalDialog( ), and &#x3c;link_ID&#x3e;.click( ), and so forth. Because redirection is commonly used by non-malicious sites to legitimately enrich content, simply eliminating redirection from a browser''s functionality would present significant complications </p>
+<p id="p-0084" num="0083"> Vulnerability Exploitation: It is not uncommon to see a malicious web page attempting to exploit multiple browser vulnerabilities in order to maximize the chance of a successful attack. If any of the attempted exploits succeed, malware may be downloaded and executed. Examples of malware include a &#x201c;Trojan downloader&#x201d;, a virus, spyware, and so forth. </p>
+<p id="p-0085" num="0084"> Malware Installation: The purpose of an exploit is almost always to introduce some piece of arbitrary code on the victim machine, as a way to achieve a larger attack goal. There are many different malcode types that are installed through browser exploits including, but not limited to, viruses that infect files, backdoors that open entry points for future unauthorized access, bot programs that allow the attacker to control a whole network of compromised systems, Trojan downloaders that connect to the Internet and download other programs, Trojan droppers that drop files from themselves without accessing the Internet, and Trojan proxies that redirect network traffic. Some spyware programs, and even anti-spyware programs, are also installed through exploit behavior. </p>
+<heading level="2" id="h-0012">Exploit Detection System </heading>
+<p id="p-0086" num="0085"> The example honey monkey exploit detection system <b>102</b>* comprises a 3-stage pipeline of virtual machines (VMs). Stage 1 is scalable honey monkey exploit detection with unpatched VMs and without redirection analysis. Stage 2 is basic (i.e., unscaled) honey monkey exploit detection with (at least partially) un-patched VMs and with redirection analysis. Stage 3 is basic honey monkey exploit detection with nearly fully-patched VMs and with redirection analysis. Fully-patched VMs may also be used to detect true zero-day exploits. </p>
+<p id="p-0087" num="0086"> Given a large list of input URLs <b>902</b>(A) with a potentially low exploit-URL density, each honey monkey in Stage 1 starts in a scalable mode by visiting &#x201c;N&#x201d; URLs simultaneously inside one unpatched VM. The simultaneous visitation may be considered a batched or grouped approach to visiting &#x201c;N&#x201d; URLs. When the honey monkey VM detects an exploit, it switches to a basic, one-URL-per-VM mode to re-test each of the N suspects in the batch so as to determine which one or ones are actually exploit URLs <b>904</b>(A). </p>
+<p id="p-0088" num="0087"> Stage 2 honey monkeys scan those exploit-URLs that are detected from Stage 1 honey monkeys. Stage 2 honey monkeys also perform recursive redirection analysis to identify multiple (up to all) web pages involved in exploit activities and to determine their relationships. Stage 3 honey monkeys continuously scan those exploit-URLs that are detected in Stage 2 using (nearly) fully-patched honey monkey VMs so as to detect attacks exploiting the latest vulnerabilities. </p>
+<p id="p-0089" num="0088"> Exploit Detection </p>
+<p id="p-0090" num="0089"> Although it is possible to detect browser exploits by building signature-based detection code for each known vulnerability or exploit, this approach is manually intensive (and may be unsuitable to the detection of zero-day exploits). To reduce manual costs, a black-box approach that is not signature-based is adopted. More specifically, a honey monkey module launches a browser instance to visit each input URL and then waits for a few minutes to allow downloading of any code that may have a short time delay before installation. </p>
+<p id="p-0091" num="0090"> A group of persistent-state changes is then detected to signal exploitation. Because the honey monkey is not instructed to click on any dialog box to permit software installation, any executable files or registry entries created outside the browser sandbox indicate an exploit. This approach has the additional important advantage of allowing the detection of both known-vulnerability exploits and zero-day exploits in a uniform way. For instance, the same honey monkey module running on un-patched machines to detect a broad range of browser-based vulnerability exploits (as shown in Stages 1 and 2) can run on fully-patched machines to detect zero-day exploits, as shown in Stage 3. </p>
+<p id="p-0092" num="0091"> At the end of each URL visit, the honey monkey module, in conjunction with a strider tracer module, generates a report (e.g., in XML). The report may contain many different types of information. By way of example only, all or part of the following five pieces of information may be included: 
+<ul id="ul0001" list-style="none">
+ <li id="ul0001-0001" num="0000">
+ <ul id="ul0002" list-style="none">
+ <li id="ul0002-0001" num="0092"> (1) Executable files created or modified outside the browser sandbox folders: This is the primary mechanism for exploit detection. It is implemented on top of the strider tracer module, which uses a file-tracing driver to efficiently record up to every single file read/write operation. </li>
+ <li id="ul0002-0002" num="0093"> (2) Processes created: The strider tracer module also tracks all child processes created by the browser process. </li>
+ <li id="ul0002-0003" num="0094"> (3) Windows registry entries created or modified: The strider tracer module additionally includes a driver that efficiently records up to every single registry read/write. To highlight the most critical entries, the registry entries most frequently attacked by spyware, Trojans, rootkits, etc. may be targeted. This allows the honey monkey module to detect exploits that modify critical configuration settings (such as the browser home page and the wallpaper) without creating executable files. </li>
+ <li id="ul0002-0004" num="0095"> (4) Vulnerability exploited: This provides additional information generally. To address limitations of the black-box approach, a vulnerability-specific exploit detector may also be incorporated. A detector may be based on the vulnerability signature of the exploit, rather than on a particular piece of malcode. </li>
+ <li id="ul0002-0005" num="0096"> (5) Redirect-URLs visited: Because malcode is often laundered through other sites, this aspect enables the tracking of redirections to determine both the real source of the malcode and those involved in the distribution chain. </li>
+ </ul>
+ </li>
+</ul>
+</p>
+<p id="p-0093" num="0097"> To ease the cleanup from an infected state, the honey monkey modules are run inside one or more VMs. Upon detecting an exploit, the honey monkey saves its logs and notifies a monkey controller on the host machine. The monkey controller destroys the infected VM and re-spawns or re-instantiates a clean VM and honey monkey module, which then continues to visit the remaining URL list. The monkey controller then passes the detected exploit-URL to the next honey monkey module in the staged pipeline to further investigate the strength of the exploit. </p>
+<p id="p-0094" num="0098"> Redirection Analysis </p>
+<p id="p-0095" num="0099"> In a described implementation, many exploit-URLs that are identified in Stage 1 do not perform the actual exploits. Instead, they act as front-end content providers that serve interesting content in order to attract browser traffic. This traffic is then sold and redirected to back-end exploit providers, which specialize in exploiting clients and installing malware. </p>
+<p id="p-0096" num="0100"> URLs visited through traffic redirection can be tracked with a &#x201c;Browser Helper Object&#x2019; (BHO) running within each browser process or by intercepting and analyzing network packets. When a honey monkey module runs in its &#x201c;redirection analysis&#x201d; mode, any automatically visited URLs are fed back to the system for further investigation. This recursive scanning allows the construction of topology graphs based on traffic redirection. Topology graphs may graph different types of URLs, such as exploit URLs generally <b>904</b>(B), zero-day or latest-patched-vulnerability exploit URLs <b>904</b>(C), some combination thereof and so forth. </p>
+<p id="p-0097" num="0101"> Analysis of topology graphs enables the identification of major exploit providers that receive traffic from a large number of content providers. They also show how exploit providers organize their web pages in a way that facilitates customized malware installations for each of their affiliates. Finally, the web pages that actually perform the exploits may be positively identified by activating an optional feature in the redirection tracker to block all redirection traffic. More specifically, singular URLs that are included as part of a list of redirection URLs may be individually visited by activating a redirection blocking feature, which ensures that only the intended URL is directly visited. Thus, single URLs may be selectively and sequentially visited to determine whether or not each particular page is responsible for performing an exploit. </p>
+<heading level="2" id="h-0013">Anti-Exploit Process </heading>
+<p id="p-0098" num="0102"> An example anti-exploit process involves generating input URL lists <b>902</b>(A) for honey monkey modules to scan and taking various actions based on analyses of the output exploit-URL data <b>904</b>(A). </p>
+<p id="p-0099" num="0103"> Generating Input URL Lists </p>
+<p id="p-0100" num="0104"> In a described implementation, three sources are used for generating &#x201c;interesting&#x201d; URLs <b>902</b>(A) for analysis. The first category is directed to suspicious URLs. Examples include web sites that are known to host spyware or malware, links appearing in phishing or spam emails or instant messages, web pages serving questionable content such as pornography, URL names that are typos of popular sites, web sites involved in DNS cache poisoning, and similar common sources of malicious web content. </p>
+<p id="p-0101" num="0105"> The second category is directed to the most popular web pages. These web pages, if compromised, can potentially infect a large population of users. Examples include the top 100,000 web sites based on browser traffic ranking or the top &#x201c;N&#x201d; million web sites based on click-through counts as measured by search engines. </p>
+<p id="p-0102" num="0106"> The third category is directed to URL lists of a more localized scope. For example, an organization may want to regularly verify that its web pages have not been compromised to exploit visitors. Also, a user may want to investigate whether any recently visited URL was responsible for causing a spyware infection. </p>
+<p id="p-0103" num="0107"> Acting on Output Exploit-URL Data </p>
+<p id="p-0104" num="0108"> There are many options available to combat exploit behavior. Of course, some are more effective than others, especially depending on the exploit context and the resources that are available. Example anti-exploit options are presented in <figref idref="DRAWINGS">FIG. 9</figref> at <b>906</b>. </p>
+<p id="p-0105" num="0109"> Firstly, exploit URLs <b>904</b>(A) may be used in an analysis of exploit URL density or to fix compromised machines. Secondly, topology graphs of exploit URLs <b>904</b>(B) may be provided to an internet safety enforcement team and/or to an anti-spyware team. They may also be used for access blocking to block access to the exploitive URLs. Thirdly, topology graphs of zero-day or latest-patched-vulnerability exploit URLs <b>904</b>(C) may be forwarded to a security response center as well as to browser or related software teams. </p>
+<heading level="2" id="h-0014">Example Device Implementations for Honey Monkey Network Exploration </heading>
+<p id="p-0106" num="0110"> <figref idref="DRAWINGS">FIG. 10</figref> is a block diagram of an example device <b>1002</b> that may be employed in conjunction with honey monkey network exploration. For example, a device <b>1002</b> may realize, execute, or otherwise implement a honey monkey system <b>102</b>. In certain implementations, devices <b>1002</b> are capable of communicating across one or more networks <b>1014</b>, such as an internet, a local area network (LAN), a telephone network, some combination thereof, and so forth. As illustrated, two devices <b>1002</b>(<b>1</b>) and <b>1002</b>(<i>n</i>) are capable of engaging in communication exchanges via network <b>1014</b>. Example relevant communication exchanges include those relating to visiting a network location represented by a URL <b>106</b>, such as a request/response exchange <b>116</b>. </p>
+<p id="p-0107" num="0111"> Generally, device <b>1002</b> may represent a server device; a storage device; a workstation or other general computer device; a set-top box or other television device; a personal digital assistant (PDA), mobile telephone, or other mobile appliance; an electronic machine generally, some combination thereof; and so forth. As illustrated, device <b>1002</b> includes one or more input/output (I/O) interfaces <b>1004</b>, at least one processor <b>1006</b>, and one or more media <b>1008</b>. Media <b>1008</b> includes processor-executable instructions <b>1010</b>. Although not specifically illustrated, device <b>1002</b> may also include other components. </p>
+<p id="p-0108" num="0112"> In a described implementation of device <b>1002</b>, I/O interfaces <b>1004</b> may include (i) a network interface for communicating across network(s) <b>1014</b>, (ii) a display device interface for displaying information on a display screen, (iii) one or more man-machine device interfaces, and so forth. Examples of (i) network interfaces include a network card, a modem, one or more ports, and so forth Examples of (ii) display device interfaces include a graphics driver, a graphics card, a hardware or software driver for a screen/television or printer, and so forth. Examples of (iii) man-machine device interfaces include those that communicate by wire or wirelessly to man-machine interface devices <b>1012</b> (e.g., a keyboard or keypad, a mouse or other graphical pointing device, a remote control, etc.). </p>
+<p id="p-0109" num="0113"> Generally, processor <b>1006</b> is capable of executing, performing, and/or otherwise effectuating processor-executable instructions, such as processor-executable instructions <b>1010</b>. Media <b>1008</b> is comprised of one or more processor-accessible media. In other words, media <b>1008</b> may include processor-executable instructions <b>1010</b> that are executable by processor <b>1006</b> to effectuate the performance of functions by device <b>1002</b>. </p>
+<p id="p-0110" num="0114"> Thus, realizations for honey monkey network exploration may be described in the general context of processor-executable instructions. Generally, processor-executable instructions include routines, programs, applications, coding, modules, protocols, objects, interfaces, components, metadata and definitions thereof, data structures, application programming interfaces (APIs), etc. that perform and/or enable particular tasks and/or implement particular abstract data types. Processor-executable instructions may be located in separate storage media, executed by different processors, and/or propagated over or extant on various transmission media. </p>
+<p id="p-0111" num="0115"> Processor(s) <b>1006</b> may be implemented using any applicable processing-capable technology. Media <b>1008</b> may be any available media that is included as part of and/or accessible by device <b>1002</b>. It includes volatile and non-volatile media, removable and non-removable media, and storage and transmission media (e.g., wireless or wired communication channels). For example, media <b>1008</b> may include an array of disks for longer-term mass storage of processor-executable instructions, random access memory (RAM) for shorter-term storage of instructions that are currently being executed, flash memory for medium to longer term storage, optical disks for portable storage, and/or link(s) on network <b>1014</b> for transmitting code or communications, and so forth. </p>
+<p id="p-0112" num="0116"> As specifically illustrated, media <b>1008</b> comprises at least processor-executable instructions <b>1010</b>. Generally, processor-executable instructions <b>1010</b>, when executed by processor <b>1006</b>, enable device <b>1002</b> to perform the various functions described herein. Examples include, but are not limited to, those of a honey monkey system <b>102</b> or <b>102</b>*(of <figref idref="DRAWINGS">FIGS. 1 and 9</figref>); those of a site visitation trace mechanism <b>600</b> (of <figref idref="DRAWINGS">FIG. 6</figref>); those of flow diagrams <b>200</b>, <b>400</b>, and <b>700</b> (of <figref idref="DRAWINGS">FIGS. 2, 4</figref>, and <b>7</b>); a multi-phase approach such as in block diagram <b>500</b> (of FIG. <b>5</b>), some combination thereof, and so forth. As illustrated in <figref idref="DRAWINGS">FIG. 10</figref>, processor-executable instructions <b>1010</b> may also include a honey monkey module <b>308</b> and/or a strider tracer module <b>310</b> (of <figref idref="DRAWINGS">FIG. 3</figref>) </p>
+<p id="p-0113" num="0117"> The machines, devices, actions, aspects, features, functions, procedures, modules, data structures, schemes, approaches, phases, stages, architectures, components, etc. of <figref idref="DRAWINGS">FIGS. 1-10</figref> are illustrated in diagrams that are divided into multiple blocks. However, the order, interconnections, interrelationships, layout, etc. in which <figref idref="DRAWINGS">FIGS. 1-10</figref> are described and/or shown are not intended to be construed as a limitation, and any number of the blocks can be modified, combined, rearranged, augmented, omitted, etc. in any manner to implement one or more systems, methods, devices, procedures, media, apparatuses, APIs, arrangements, etc. for honey monkey network exploration. </p>
+<p id="p-0114" num="0118"> Although systems, media, devices, methods, procedures, apparatuses, techniques, schemes, approaches, arrangements, and other implementations have been described in language specific to structural, logical, algorithmic, and functional features and/or diagrams, it is to be understood that the invention defined in the appended claims is not necessarily limited to the specific features or acts described above. Rather, the specific features and acts described above are disclosed as example forms of implementing the claims. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-claim-statement>What is claimed is: </us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. A system comprising: 
+<claim-text>a browser that is capable of visiting network locations as represented by uniform resource locators (URLs); and </claim-text>
+<claim-text>a browser-based vulnerability exploit detector that directs the browser to visit a given URL by making an information request to the given URL; the browser-based vulnerability exploit detector adapted to detect if the given URL accomplishes an exploit on the system after the browser makes the information request to the given URL. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The system as recited in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the browser-based vulnerability exploit detector comprises a honey monkey module and a tracer module; and wherein the honey monkey module directs the browser to make the information request to the given URL, and the tracer module traces events that occur within the system after the information request is made. </claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The system as recited in <claim-ref idref="CLM-00002">claim 2</claim-ref>, wherein the tracer module produces a trace file that includes at least a list of URLs to which the browser is redirected. </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The system as recited in <claim-ref idref="CLM-00002">claim 2</claim-ref>, wherein the tracer module produces a trace file that includes at least a list of writes that occur outside a browser sandbox. </claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The system as recited in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the system further comprises: 
+<claim-text>at least one virtual machine; and </claim-text>
+<claim-text>wherein the browser and at least a portion of the browser-based vulnerability exploit detector execute on the at least one virtual machine. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The system as recited in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the system destroys the at least one virtual machine when an exploit against the at least one virtual machine is detected; and wherein the system re-instantiates a clean virtual machine to continue exploration of other URLs. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The system as recited in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the system further comprises: 
+<claim-text>multiple browsers that have different levels of patching, including a lower patched browser version and a higher patched browser version. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. The system as recited in <claim-ref idref="CLM-00007">claim 7</claim-ref>, wherein the browser-based vulnerability exploit detector directs the lower patched browser version to visit the given URL and detects if the given URL accomplishes an exploit in conjunction with the lower patched browser version; and wherein the browser-based vulnerability exploit detector directs the higher patched browser version to visit the given URL if an exploit is detected as being accomplished in conjunction with the lower patched browser version. </claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The system as recited in <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein the browser-based vulnerability exploit detector attempts to detect if the given URL accomplishes an exploit in conjunction with the higher patched browser version; and wherein the browser-based vulnerability exploit detector determines that the exploit assaults a vulnerability remedied by a patch for the higher patched browser version if the browser-based vulnerability exploit detector does not detect that the given URL accomplishes an exploit in conjunction with the higher patched browser version. </claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. One or more processor-accessible media comprising processor-executable instructions that, when executed, direct a device to perform actions comprising: 
+<claim-text>visiting a uniform resource locator (URL) of a parent list of redirection URLs; </claim-text>
+<claim-text>producing a child list of redirection URLs from the action of visiting; </claim-text>
+<claim-text>recursively visiting child URLs of the child list of redirection URLs to discover redirection relationships of the URLs that are visited; and </claim-text>
+<claim-text>creating a graph that includes the URLs that are visited and that indicates the discovered redirection relationships. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The one or more processor-accessible media as recited in <claim-ref idref="CLM-00010">claim 10</claim-ref>, comprising the processor-executable instructions that, when executed, direct the device to perform further actions comprising: 
+<claim-text>visiting a given URL; </claim-text>
+<claim-text>monitoring URL redirections resulting from the action of visiting the given URL; and </claim-text>
+<claim-text>tracing the monitored URL redirections to produce the parent list of redirection URLs. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. The one or more processor-accessible media as recited in <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the action of creating further comprises an action of: 
+<claim-text>visually differentiating between site nodes and page nodes in the graph. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The one or more processor-accessible media as recited in <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the action of creating further comprises actions of: 
+<claim-text>representing URLs with corresponding symbols; and </claim-text>
+<claim-text>visually indicating a number of redirections that are associated with each URL by changing the corresponding symbols. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The one or more processor-accessible media as recited in <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the action of creating further comprises an action of: 
+<claim-text>visually differentiating between (i) connections that represent relationships between site nodes and their hosted page nodes and (ii) connections that represent redirection relationships. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. The one or more processor-accessible media as recited in <claim-ref idref="CLM-00010">claim 10</claim-ref>, comprising the processor-executable instructions that, when executed, direct the device to perform further actions comprising: 
+<claim-text>visiting each respective URL of the parent list of redirection URLs; </claim-text>
+<claim-text>producing respective child lists of redirection URLs from the action of visiting each respective URL; and </claim-text>
+<claim-text>recursively visiting child URLs of the child lists of redirection URLs to discover redirection relationships of the URLs that are visited. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. A method comprising: 
+<claim-text>requesting information from a targeted network location as represented by a uniform resource locator (URL); </claim-text>
+<claim-text>receiving a response from the targeted URL; </claim-text>
+<claim-text>tracing events that occur on a machine; </claim-text>
+<claim-text>ascertaining if an illicit event occurred based on the traced events; and </claim-text>
+<claim-text>determining that an exploit has been accomplished by the targeted URL if an illicit event is ascertained to have occurred. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. The method as recited in <claim-ref idref="CLM-00016">claim 16</claim-ref>, further comprising: 
+<claim-text>waiting a predetermined time period (i) between the receiving and the ascertaining or (ii) between the requesting and the ascertaining. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. The method as recited in <claim-ref idref="CLM-00016">claim 16</claim-ref>, further comprising: 
+<claim-text>starting a virtual machine; and </claim-text>
+<claim-text>launching a browser; </claim-text>
+<claim-text>wherein the requesting and the receiving are effected, at least partially, by the browser; and </claim-text>
+<claim-text>wherein the method further comprises: </claim-text>
+<claim-text>terminating the virtual machine if it is determined that an exploit has been accomplished on the virtual machine by the targeted URL. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. The method as recited in <claim-ref idref="CLM-00016">claim 16</claim-ref>, wherein the ascertaining comprises: 
+<claim-text>ascertaining if a write occurred outside of a browser sandbox. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. The method as recited in <claim-ref idref="CLM-00016">claim 16</claim-ref>, wherein the requesting and the receiving are effected, at least partially, by a lower patched browser version; and wherein the method is repeated with the requesting and the receiving being effected, at least partially, by a higher patched browser version if it is determined that an exploit has been accomplished when the requesting and the receiving are first effected, at least partially, by the lower patched browser version.</claim-text>
+ </claim>
+</claims>
+</us-patent-application>
+')[0m
+  [4;36;1mDocument::Version Create (1.0ms)[0m   [0;1mINSERT INTO "document_versions" ("document_id", "created_at", "title", "updated_at", "version", "content") VALUES(2, '2010-03-14 22:10:02', 'XML Test File 1', '2010-03-14 22:10:02', 1, '<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE us-patent-application SYSTEM "us-patent-application-v42-2006-08-23.dtd" [ ]>
+<us-patent-application lang="EN" dtd-version="v4.2 2006-08-23" file="US20070208822A1-20070906.XML" status="PRODUCTION" id="us-patent-application" country="US" date-produced="20070822" date-publ="20070906">
+<us-bibliographic-data-application lang="EN" country="US">
+<publication-reference>
+<document-id>
+<country>US</country>
+<doc-number>20070208822</doc-number>
+<kind>A1</kind>
+<date>20070906</date>
+</document-id>
+</publication-reference>
+<application-reference appl-type="utility">
+<document-id>
+<country>US</country>
+<doc-number>11276483</doc-number>
+<date>20060301</date>
+</document-id>
+</application-reference>
+<us-application-series-code>11</us-application-series-code>
+<classifications-ipcr>
+<classification-ipcr>
+<ipc-version-indicator><date>20060101</date></ipc-version-indicator>
+<classification-level>A</classification-level>
+<section>G</section>
+<class>06</class>
+<subclass>F</subclass>
+<main-group>15</main-group>
+<subgroup>16</subgroup>
+<symbol-position>F</symbol-position>
+<classification-value>I</classification-value>
+<action-date><date>20070906</date></action-date>
+<generating-office><country>US</country></generating-office>
+<classification-status>B</classification-status>
+<classification-data-source>H</classification-data-source>
+</classification-ipcr>
+</classifications-ipcr>
+<classification-national>
+<country>US</country>
+<main-classification>709217000</main-classification>
+</classification-national>
+<invention-title id="d0e102">Honey Monkey Network Exploration</invention-title>
+<parties>
+<applicants>
+<applicant sequence="00" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Wang</last-name>
+<first-name>Yi-Min</first-name>
+<address>
+<city>Bellevue</city>
+<state>WA</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+<applicant sequence="01" app-type="applicant-inventor" designation="us-only">
+<addressbook>
+<last-name>Beck</last-name>
+<first-name>Douglas</first-name>
+<middle-name>R.</middle-name>
+<address>
+<city>Redmond</city>
+<state>WA</state>
+<country>US</country>
+</address>
+</addressbook>
+<nationality>
+<country>US</country>
+</nationality>
+<residence>
+<country>US</country>
+</residence>
+</applicant>
+</applicants>
+<correspondence-address>
+<addressbook>
+<name>LEE &#x26; HAYES PLLC</name>
+<address>
+<address-1>421 W RIVERSIDE AVENUE SUITE 500</address-1>
+<city>SPOKANE</city>
+<state>WA</state>
+<postcode>99201</postcode>
+<country>US</country>
+</address>
+</addressbook>
+</correspondence-address>
+</parties>
+<assignees>
+<assignee>
+<addressbook>
+<orgname>Microsoft Corporation</orgname>
+<role>02</role>
+<address>
+<city>Redmond</city>
+<state>WA</state>
+<country>US</country>
+</address>
+</addressbook>
+</assignee>
+</assignees>
+</us-bibliographic-data-application>
+<abstract id="abstract">
+<p id="p-0001" num="0000">A network can be explored to investigate exploitive behavior. For example, network sites may be actively explored by a honey monkey system to detect if they are capable of accomplishing exploits, including browser-based exploits, on a machine. Also, the accomplishment of exploits may be detected by tracing events occurring on a machine after visiting a network site and analyzing the traced events for illicit behavior. Alternatively, site redirections between and among uniform resource locators (URLs) may be explored to discover relationships between sites that are visited. </p>
+</abstract>
+<drawings id="DRAWINGS">
+<figure id="figure-D00000" num="00000">
+<img id="EMI-D00000" he="131.89mm" wi="128.33mm" file="US20070208822A1-20070906-D00000.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00001" num="00001">
+<img id="EMI-D00001" he="205.40mm" wi="185.42mm" file="US20070208822A1-20070906-D00001.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00002" num="00002">
+<img id="EMI-D00002" he="219.88mm" wi="163.91mm" file="US20070208822A1-20070906-D00002.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00003" num="00003">
+<img id="EMI-D00003" he="233.68mm" wi="177.21mm" file="US20070208822A1-20070906-D00003.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00004" num="00004">
+<img id="EMI-D00004" he="249.09mm" wi="176.28mm" file="US20070208822A1-20070906-D00004.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00005" num="00005">
+<img id="EMI-D00005" he="251.88mm" wi="182.71mm" file="US20070208822A1-20070906-D00005.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00006" num="00006">
+<img id="EMI-D00006" he="230.38mm" wi="174.07mm" file="US20070208822A1-20070906-D00006.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00007" num="00007">
+<img id="EMI-D00007" he="248.24mm" wi="159.68mm" file="US20070208822A1-20070906-D00007.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00008" num="00008">
+<img id="EMI-D00008" he="223.01mm" wi="152.91mm" orientation="landscape" file="US20070208822A1-20070906-D00008.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00009" num="00009">
+<img id="EMI-D00009" he="252.81mm" wi="180.85mm" orientation="landscape" file="US20070208822A1-20070906-D00009.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+<figure id="figure-D00010" num="00010">
+<img id="EMI-D00010" he="206.67mm" wi="176.87mm" file="US20070208822A1-20070906-D00010.TIF" alt="embedded image" img-content="drawing" img-format="tif"/>
+</figure>
+</drawings>
+<description id="description">
+<?summary-of-invention description="Summary of Invention" end="lead"?>
+<heading level="2" id="h-0001">BACKGROUND </heading>
+<p id="p-0002" num="0001"> Computers are used to conduct business, acquire information, and experience entertainment by visiting sites on the internet. Unfortunately, some internet sites are designed to accomplish actions that are not requested by a user. These actions can result in harm to a computer and/or to the user of the computer. </p>
+<p id="p-0003" num="0002"> Malware is one term for software that can cause harm to a user. For example, malware may report relatively innocuous generic marketing-related information and/or reduce the performance of a computer in which it has been installed. However, malware can also damage or even destroy data files on a computer. Moreover, and perhaps most dangerously, malware can also be used to steal valuable personal or financial information. </p>
+<p id="p-0004" num="0003"> Malware may be installed without a user''s knowledge, or the full extent of a malware program''s functionality may be unknown to a user when installation is authorized. In any case, malware is typically software that a user would ultimately rather not have present, functional, or executing on his or her computer because of the attendant risks. Consequently, internet sites that wish to install malware have developed convoluted and secretive mechanisms for doing so without full knowledge of the user and even without first acquiring any authorization from a user. </p>
+<heading level="2" id="h-0002">SUMMARY </heading>
+<p id="p-0005" num="0004"> A network can be explored to investigate exploitive behavior. For example, network sites may be actively explored by a honey monkey system to detect if they are capable of accomplishing exploits, including browser-based exploits, on a machine. Also, the accomplishment of exploits may be detected by tracing events occurring on a machine after visiting a network site and analyzing the traced events for illicit behavior. Alternatively, site redirections between and among uniform resource locators (URLs) may be explored to discover relationships between the sites that are visited. </p>
+<p id="p-0006" num="0005"> This Summary is provided to introduce a selection of concepts in a simplified form that are further described below in the Detailed Description. This Summary is not intended to identify key features or essential features of the claimed subject matter, nor is it intended to be used as an aid in determining the scope of the claimed subject matter. Moreover, other method, system, scheme, apparatus, device, media, procedure, API, arrangement, etc. implementations are described herein.</p>
+<?summary-of-invention description="Summary of Invention" end="tail"?>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="lead"?>
+<heading level="2" id="h-0003">BRIEF DESCRIPTION OF THE DRAWINGS </heading>
+<p id="p-0007" num="0006"> The same numbers are used throughout the drawings to reference like and/or corresponding aspects, features, and components. </p>
+<p id="p-0008" num="0007"> <figref idref="DRAWINGS">FIG. 1</figref> is a block diagram example of a honey monkey system that is capable of exploring a network. </p>
+<p id="p-0009" num="0008"> <figref idref="DRAWINGS">FIG. 2</figref> is a flow diagram that illustrates an example of a method for exploring a network with a honey monkey system. </p>
+<p id="p-0010" num="0009"> <figref idref="DRAWINGS">FIG. 3</figref> is a block diagram of an example honey monkey machine having a honey monkey controller and multiple virtual machines. </p>
+<p id="p-0011" num="0010"> <figref idref="DRAWINGS">FIG. 4</figref> is a flow diagram that illustrates an example of a method for using a black-box approach to detecting exploits with a honey monkey machine. </p>
+<p id="p-0012" num="0011"> <figref idref="DRAWINGS">FIG. 5</figref> is a block diagram of an example multi-phase approach to analyzing an exploit using software with different patch levels. </p>
+<p id="p-0013" num="0012"> <figref idref="DRAWINGS">FIG. 6</figref> is a block diagram of an example site visitation trace mechanism for a strider tracer module. </p>
+<p id="p-0014" num="0013"> <figref idref="DRAWINGS">FIG. 7</figref> is a flow diagram that illustrates an example of a method for generating a topology graph that shows relationships between and among sites that are involved in exploit behavior. </p>
+<p id="p-0015" num="0014"> <figref idref="DRAWINGS">FIG. 8</figref> is an example exploit topology graph showing relationships between and among sites that are involved in exploit behavior. </p>
+<p id="p-0016" num="0015"> <figref idref="DRAWINGS">FIG. 9</figref> illustrates an example honey monkey exploit detection system, which is shown inside the dashed-line rectangle, and a surrounding anti-exploit process, which includes both automatic and manual components. </p>
+<p id="p-0017" num="0016"> <figref idref="DRAWINGS">FIG. 10</figref> is a block diagram of an example device that may be employed in conjunction with honey monkey network exploration.</p>
+<?brief-description-of-drawings description="Brief Description of Drawings" end="tail"?>
+<?detailed-description description="Detailed Description" end="lead"?>
+<heading level="2" id="h-0004">DETAILED DESCRIPTION </heading>
+<p id="p-0018" num="0017"> This detailed description is divided into four sections. The four sections are entitled &#x201c;Example General Implementations for Honey Monkey Network Exploration&#x201d;, &#x201c;Example Specific Implementations for Honey Monkey Network Exploration&#x201d;, &#x201c;A Specific Example Multi-Stage Implementation for a Honey Monkey Exploit Detection System&#x201d;, and &#x201c;Example Device Implementations for Honey Monkey Network Exploration&#x201d;. </p>
+<heading level="2" id="h-0005">Example General Implementations for Honey Monkey Network Exploration </heading>
+<p id="p-0019" num="0018"> <figref idref="DRAWINGS">FIG. 1</figref> is a block diagram <b>100</b> example of a honey monkey system <b>102</b> that is capable of exploring a network. Block diagram <b>100</b> includes honey monkey system <b>102</b>, a network, and multiple network locations. The network is represented by an internet <b>104</b>. However, any general network may alternatively be explored by honey monkey system <b>102</b>. The multiple network locations are represented by uniform resource locators (URLs) <b>106</b>. However, other identifiers of network locations or nodes may alternatively be used. </p>
+<p id="p-0020" num="0019"> As illustrated, honey monkey system <b>102</b> includes a browser <b>108</b> and a browser-based vulnerability exploit detector <b>110</b>. Internet <b>104</b> includes some number &#x201c;u&#x201d; of URLs <b>106</b>, with &#x201c;u&#x201d; being an integer. Specifically, internet <b>104</b> includes URL <b>106</b>(<b>1</b>), URL <b>106</b>(<b>2</b>) . . . URL <b>106</b>(<i>u</i>). URLs represent some location, node, etc. on internet <b>104</b>. An example location is a site on the so-called world wide web (WWW). </p>
+<p id="p-0021" num="0020"> An expanded diagram for URL <b>106</b>(<i>u</i>) includes a browser-based vulnerability exploiter <b>112</b>. Browser-based vulnerability exploiter <b>112</b> is capable of installing, creating, realizing, or otherwise accomplishing an exploit <b>114</b> during communication exchanges with honey monkey system <b>102</b>. These communication exchanges are represented by request/response exchanges <b>116</b>. Specifically, &#x201c;u&#x201d; request/response exchanges <b>116</b>(<b>1</b>), <b>116</b>(<b>2</b>) . . . <b>116</b>(<i>u</i>) occur between honey monkey system <b>102</b> and URL <b>106</b>(<b>1</b>), <b>106</b>(<b>2</b>) . . . <b>106</b>(<i>u</i>), respectively. </p>
+<p id="p-0022" num="0021"> In a described implementation, honey monkey system <b>102</b> actively explores internet <b>104</b> by sending an information request to a URL <b>106</b> in order to elicit a response as part of a request/response exchange <b>116</b>. Honey monkey system <b>102</b> uses browser <b>108</b> to make the request in order to emulate the appearance of a standard browsing environment, including any vulnerability or vulnerabilities that browser <b>108</b> might expose to URLs <b>106</b>. </p>
+<p id="p-0023" num="0022"> Standard responses are directed to browser <b>108</b> within honey monkey system <b>102</b>. However, suspect responses may be directed fully or partially to other software components. In operation, a so-called sandbox is created for browser <b>108</b>. Typically, a browser is capable of creating its own sandbox, and it does so automatically to limit what changes the components loaded into the browser process can make during normal operations. When accomplishing an exploit <b>114</b>, the suspect responses usually extend beyond the browser sandbox. In an example implementation, events that extend beyond the browser sandbox are detectable by browser-based vulnerability exploit detector <b>110</b>. An example of an exploit <b>114</b> is the installation of malware. Malware examples are described further herein below. </p>
+<p id="p-0024" num="0023"> By way of specific example, honey monkey system <b>102</b> directs browser <b>108</b> to visit URL <b>106</b>(<i>u</i>) by requesting information from URL <b>106</b>(<i>u</i>) as a result of a redirection <b>120</b> from URL <b>106</b>(<b>2</b>). A user actually intends to visit URL <b>106</b>(<b>2</b>). However, URL <b>106</b>(<b>2</b>) responds with the requested information and additionally instructs the browser to visit URL <b>106</b>(<i>u</i>), which constitutes an example redirection <b>120</b>. The exploiter served by URL <b>106</b>(<i>u</i>) is the requested information with respect to URL <b>106</b>(<i>u</i>). In short, URL <b>106</b>(<i>u</i>) is a bad actor and includes browser-based vulnerability exploiter <b>112</b>. As at least part of request/response exchange <b>116</b>(<i>u</i>), URL <b>106</b>(<i>u</i>) activates browser-based vulnerability exploiter <b>112</b>. Browser-based vulnerability exploiter <b>112</b> accomplishes exploit <b>114</b> at exploit realization <b>118</b>. Exploit realization <b>118</b> may be execution of some code, installation of a program, creation or modification of a file, creation or adjustment to a registry setting, some combination thereof, and so forth. </p>
+<p id="p-0025" num="0024"> Honey monkey system <b>102</b> uses browser-based vulnerability exploit detector <b>110</b> to detect exploit <b>114</b>. Example detection mechanisms are described further herein below. Examples include a black-box/event tracing mechanism and a vulnerability-specific exploit detection mechanism. The former is described with particular reference to the flow diagram of <figref idref="DRAWINGS">FIG. 4</figref>. </p>
+<p id="p-0026" num="0025"> <figref idref="DRAWINGS">FIG. 2</figref> is a flow diagram <b>200</b> that illustrates an example of a method for exploring a network with a honey monkey system. Flow diagram <b>200</b> includes six (6) blocks <b>202</b>-<b>212</b>. Although the actions of flow diagram <b>200</b> may be performed in other environments and with a variety of hardware and software combinations, a honey monkey system <b>102</b> (of <figref idref="DRAWINGS">FIG. 1</figref>) may be used to implement the method of flow diagram <b>200</b>. </p>
+<p id="p-0027" num="0026"> At block <b>202</b>, a URL is selected. For example, a honey monkey system <b>102</b> may select a URL <b>106</b>(<i>u</i>). Honey monkey system <b>102</b> may also provide the selected URL <b>106</b>(<i>u</i>) to a browser <b>108</b> along with an instruction to point the browser at the selected URL <b>106</b>(<i>u</i>). </p>
+<p id="p-0028" num="0027"> At block <b>204</b>, an information request is sent to the selected URL. For example, browser <b>108</b> may target the selected URL <b>106</b>(<i>u</i>) by sending an information request thereto. At block <b>206</b>, a response is received from the targeted URL. For example, browser <b>108</b> may receive a response from the targeted URL <b>106</b>(<i>u</i>) as part of a request/response exchange <b>116</b>. If URL <b>106</b>(<i>u</i>) includes a browser-based vulnerability exploiter <b>112</b>, then the machine or device upon which honey monkey system <b>102</b> is executing may also &#x201c;receive&#x201d; an exploit <b>114</b> as a result of an exploit realization <b>118</b>. </p>
+<p id="p-0029" num="0028"> At block <b>208</b>, an exploit detection is performed. For example, a browser-based vulnerability exploit detector <b>110</b> of honey monkey system <b>102</b> may attempt to detect if any exploit <b>114</b> has been accomplished (e.g., realized). At block <b>210</b>, it is determined if an exploit is detected. If not, then another URL is selected (at block <b>202</b>). For example, the other URL may be contacted with a newly-launched browser (at block <b>204</b>). </p>
+<p id="p-0030" num="0029"> If, on the other hand, an exploit is detected (at block <b>210</b>), then at block <b>212</b> the detected exploit is analyzed. The analysis may optionally involve visiting URLs listed in a history of URLs that were visited as a result of browser redirection. The analysis may also optionally involve visiting the redirect URLs with a redirection blocking feature enabled so as to narrow down and actually identify pages that truly perform the exploits. Examples of redirection analysis are described further herein below with particular reference to <figref idref="DRAWINGS">FIGS. 6-8</figref>. </p>
+<heading level="2" id="h-0006">Example Specific Implementations for Honey Monkey Network Exploration </heading>
+<p id="p-0031" num="0030"> Example general implementations are described in the preceding section, and example specific implementations are described in this section as well as in the following section. However, the general and specific implementations are not mutually exclusive. By way of example only, aspects of specific implementation(s) may be incorporated into a general implementation. For instance, a honey monkey controller <b>304</b> and a virtual machine <b>306</b> (both of <figref idref="DRAWINGS">FIG. 3</figref> as described herein below) may comprise all or part of a honey monkey system <b>102</b>. Also, a honey monkey system <b>102</b> may incorporate some or all of the patch-escalation exploit analysis features described herein below with particular reference to <figref idref="DRAWINGS">FIG. 5</figref>. Furthermore, aspects of the specific implementations may be combined in many different manners. For example, the virtual machine concepts of <figref idref="DRAWINGS">FIG. 3</figref> may be combined with the redirection analysis of <figref idref="DRAWINGS">FIGS. 6-8</figref>. </p>
+<heading level="2" id="h-0007">Example Virtual Machine Implementations </heading>
+<p id="p-0032" num="0031"> <figref idref="DRAWINGS">FIG. 3</figref> is a block diagram of an example honey monkey machine <b>302</b> having a honey monkey controller <b>304</b> and multiple virtual machines <b>306</b>. As illustrated, honey monkey machine <b>302</b> includes &#x201c;v&#x201d; virtual machines <b>306</b>(<b>1</b>), <b>306</b>(<b>2</b>) . . . <b>306</b>(<i>v</i>), with &#x201c;v&#x201d; being some integer. An example device that may comprise such a honey monkey machine <b>302</b> is described herein below with particular reference to <figref idref="DRAWINGS">FIG. 10</figref>. </p>
+<p id="p-0033" num="0032"> The integer &#x201c;v&#x201d; may have any value of one or higher. So-called heavy-weight virtual machine products may be capable of having two, three, eight, or more virtual machines running on a single physical machine. So-called light-weight virtual machine products may be capable of having tens to even thousands of virtual machines running on a single physical machine. </p>
+<p id="p-0034" num="0033"> In a described implementation, honey monkey controller <b>304</b> instantiates the &#x201c;v&#x201d; virtual machines <b>306</b>. Each virtual machine <b>306</b> includes a honey monkey module <b>308</b>, a strider tracer module <b>310</b>, and browser <b>108</b>. Although illustrated separately, honey monkey module <b>308</b> and strider tracer module <b>310</b> may reside in the same process. Moreover, honey monkey module <b>308</b> may be realized as two or more modules. For example, one module may reside in kernel mode as a driver, and the other module may reside in user mode as a dynamic-linked library (DLL) that is loaded into the process module. In operation, honey monkey module <b>308</b> directs browser <b>108</b> to engage in request/response exchanges <b>116</b> with URLs <b>106</b>. During and/or afterwards, honey monkey module <b>308</b> performs an exploit detection procedure to determine if an exploit was accomplished by a URL <b>106</b>. </p>
+<p id="p-0035" num="0034"> The exploit detection procedure is effected, at least in part, by inspecting a trace file created by strider tracer module <b>310</b>. Strider tracer module <b>310</b> is adapted to trace certain events (e.g., operations, actions, etc.) within a given machine (be it a virtual machine or a real machine). For example, the following events may be traced: registry writes, file writes, process creations, some combination thereof, and so forth. When it is ascertained from the trace file that an illicit event has occurred, honey monkey module <b>308</b> determines that an exploit has been detected. An example of creation(s), termination(s), interactions, etc. between and among the various components of honey monkey machine <b>302</b> is described further below with particular reference to <figref idref="DRAWINGS">FIG. 4</figref>. </p>
+<p id="p-0036" num="0035"> <figref idref="DRAWINGS">FIG. 4</figref> is a flow diagram <b>400</b> that illustrates an example of a method for using a black-box approach to detecting exploits with a honey monkey machine. The illustrated black-box approach is trace driven. Flow diagram <b>400</b> includes thirteen (13) blocks <b>402</b>-<b>426</b>. Although the actions of flow diagram <b>400</b> may be performed in other environments and with a variety of hardware and software combinations, a honey monkey machine <b>302</b> (of <figref idref="DRAWINGS">FIG. 3</figref>) may be used to implement the method of flow diagram <b>400</b>. </p>
+<p id="p-0037" num="0036"> At block <b>402</b>, a honey monkey (HM) controller starts a virtual machine (VM). For example, a honey monkey controller <b>304</b> of a honey monkey machine <b>302</b> may start a virtual machine <b>306</b>(<b>1</b>). At block <b>404</b>, the honey monkey controller starts a honey monkey module and a strider tracer (ST) module. For example, honey monkey controller <b>304</b> may start a honey monkey module <b>308</b> and a strider tracer module <b>310</b>. Alternatively, honey monkey module <b>308</b> may be configured to auto-start with the operating system. Strider tracer module <b>310</b> begins tracing events within virtual machine <b>306</b>(<b>1</b>) to create a trace log. </p>
+<p id="p-0038" num="0037"> At block <b>406</b>, the honey monkey module launches a browser. For example, honey monkey module <b>308</b> may launch a browser <b>108</b>. Honey monkey module <b>308</b> also provides a URL, such as URL <b>106</b>(<i>u</i>), to browser <b>108</b>. A URL list may be provided to honey monkey module <b>308</b> from honey monkey controller <b>304</b>. </p>
+<p id="p-0039" num="0038"> At block <b>408</b>, the browser requests information from the targeted URL. For example, browser <b>108</b> may visit URL <b>106</b>(<i>u</i>) by requesting information from it as part of a request/response exchange <b>116</b>(<i>u</i>). In an exploit scenario, the browser visitation is likely the result of a redirection, or more specifically a cross-domain auto-visit. At block <b>410</b>, the browser receives a response from the targeted URL. For example, browser <b>108</b> may receive a response from URL <b>106</b>(<i>u</i>). The response may or may not involve the accomplishment of an exploit <b>114</b> (of <figref idref="DRAWINGS">FIG. 1</figref>). </p>
+<p id="p-0040" num="0039"> As part of a black-box approach, the honey monkey module waits a predetermined time period at block <b>412</b>. For example, honey monkey module <b>308</b> may wait a predetermined time period such as one minute, two minutes, five minutes, or some other duration. The longer the duration, the greater the likelihood that any intended exploit will be accomplished during the predetermined time period, and thus be efficiently detectable by this black-box approach. On the other hand, the longer the duration of the predetermined time period, the fewer the number of URLs <b>106</b> that may be explored each hour, each day, and so forth. </p>
+<p id="p-0041" num="0040"> After expiration of the predetermined time period (at block <b>412</b>), the honey monkey module provides a trace file to the honey monkey controller at block <b>414</b>. For example, honey monkey module <b>308</b> may provide a trace file that is produced by strider tracer module <b>310</b> to honey monkey controller <b>304</b>. At block <b>416</b>, the honey monkey controller analyzes the trace file that is produced by the strider tracer module. For example, honey monkey controller <b>304</b> may inspect a trace file created by strider tracer module <b>310</b> to detect the occurrence of events (e.g., file accesses, processing operations, etc.) that extend beyond the bounds of a browser sandbox. </p>
+<p id="p-0042" num="0041"> At block <b>418</b>, it is determined by the honey monkey controller if an illicit event is evident from the trace file. If not, then at block <b>420</b> a next URL is selected. For example, honey monkey module <b>308</b> may provide another URL <b>106</b> to a newly-launched browser <b>108</b> (at block <b>406</b>). A new browser process is launched for each URL so that the process ID can be correlated to the URL in the output trace files because the processes are more easily traceable. If, on the other hand, an illicit event is evidenced from the trace file to have occurred (as determined at block <b>418</b>), then the method of flow diagram <b>400</b> continues at block <b>422</b>. </p>
+<p id="p-0043" num="0042"> At block <b>422</b>, the honey monkey controller terminates the associated virtual machine. For example, in response to detection of an exploit, honey monkey controller <b>304</b> terminates the virtual machine <b>306</b>(<b>1</b>) that is associated with the honey monkey module <b>308</b> that is operating the exploited browser <b>108</b>. At block <b>424</b>, the honey monkey controller restarts the virtual machine with a clean state. For example, honey monkey controller <b>304</b> may restart the affected virtual machine <b>306</b>(<b>1</b>) at a state that existed prior to beginning the request/response exchange <b>116</b>(<i>u</i>) with the responsible URL <b>106</b>(<i>u</i>). </p>
+<p id="p-0044" num="0043"> Furthermore, the virtual machine state may revert all the way back to a state prior to beginning any request/response exchanges <b>116</b> that are initiated for a batch of URLs. A batched network exploration approach is described further herein below. Moreover, the virtual machine state may be restarted from a saved fully clean state that existed before any honey monkey-initiated request/responses to avoid the risk of contamination and because restarting from a clean state is relatively fast. When the virtual machine is started from a saved state, the honey monkey module may be suspended in an input wait state. </p>
+<p id="p-0045" num="0044"> At block <b>426</b>, the URL that is responsible for the exploit is assigned for further analysis or other action. For example, recursive redirection analysis may be performed on URL <b>106</b>(<i>u</i>). Such recursive redirection analysis is described further herein below with particular reference to <figref idref="DRAWINGS">FIGS. 6-8</figref>. Examples of other actions that may be taken to combat an exploitive URL are described herein below with particular reference to <figref idref="DRAWINGS">FIG. 9</figref>. </p>
+<heading level="2" id="h-0008">Example Multi-Phase Exploit Analysis Implementations </heading>
+<p id="p-0046" num="0045"> <figref idref="DRAWINGS">FIG. 5</figref> is a block diagram <b>500</b> of an example multi-phase approach to analyzing an exploit using software <b>502</b> with different patch levels. Software may be considered to have a life span with different phases. In a first phase, software is issued in an initial version. Typically, a software program in its initial version has multiple vulnerabilities that may be taken advantage of by exploits. The software can be patched to plug or remove these vulnerabilities. </p>
+<p id="p-0047" num="0046"> Over the lifetime of a given software program, more than one patch is often issued to update the software multiple times. At each phase or iteration as software migrates from lower patched software versions to higher patched software versions, the software generally becomes less susceptible to exploits and thus more secure. At any given moment, there is a software program having the latest update that may be considered the fully-patched software version. </p>
+<p id="p-0048" num="0047"> As illustrated, block diagram <b>500</b> includes software <b>502</b> in four (4) different versions. These four versions are: un-patched software <b>502</b>(UP) that is the initial version, partially-patched software <b>502</b>(PP<b>1</b>) that includes a first update, partially-patched software <b>502</b>(PP<b>2</b>) that also includes a second update, and fully-patched software <b>502</b>(FP) that includes the latest update and represents the most recent version. Although four different versions of the software program <b>502</b> are illustrated in block diagram <b>500</b> and are described herein, fewer than four or more than four different versions may alternatively be in effect for a given software program <b>502</b>. </p>
+<p id="p-0049" num="0048"> Partially-patched software <b>502</b>(PP<b>1</b>) having the first update is generally less susceptible to exploits than un-patched software <b>502</b>(UP). Partially-patched software <b>502</b>(PP<b>2</b>) that has the first and second updates is generally less susceptible to exploits than partially-patched software <b>502</b>(PP<b>1</b>) that has only the first update. The fully-patched software <b>502</b>(FP) that has the latest update is generally the least susceptible to exploits. </p>
+<p id="p-0050" num="0049"> Software <b>502</b> may comprise a browser <b>108</b> (of <figref idref="DRAWINGS">FIGS. 1 and 3</figref>), an operating system (not explicitly shown), some other software program, some combination thereof, and so forth. To determine if software <b>502</b> is vulnerable to an exploit from a given URL <b>106</b>, the given URL <b>106</b> is visited, and the occurrence of an exploit is detected as described herein. Generally, when a certain exploit is detected, the honey monkey system escalates the investigation of the given URL <b>106</b> in phases by visiting it with software <b>502</b> having an ever increasing patch level. When a particular patch level is first reached that is not vulnerable to the detected exploit, then it can be inferred that that particular patch level fixes the vulnerability attacked by the detected exploit. </p>
+<p id="p-0051" num="0050"> In block diagram <b>500</b>, a given URL <b>106</b> is first visited using un-patched software <b>502</b>(UP). If an exploit is not detected (at star <b>504</b>), then no escalation (block <b>506</b>) is involved because even the most susceptible version of software <b>502</b> is not the victim of (i.e., is not successfully attacked by) an exploit. (Or, in most cases, URL <b>106</b> is not a malicious URL, so no attack was actually attempted.) If an exploit is detected (at star <b>504</b>), then the exploit investigation is escalated by using a partially-patched software <b>502</b>(PP<b>1</b>) version that includes a first update. </p>
+<p id="p-0052" num="0051"> Thus, partially-patched software <b>502</b>(PP<b>1</b>) visits the given URL <b>106</b>. If an exploit is not detected (at star <b>508</b>), then it is apparent (at block <b>510</b>) that the exploited vulnerability in software <b>502</b> is fixed by the first update. If an exploit is detected (at star <b>508</b>), then the exploit investigation is further escalated at yet another phase by using a partially-patched software <b>502</b>(PP<b>2</b>) version that includes a second update, which incorporates the first update in this example. </p>
+<p id="p-0053" num="0052"> Thus, partially-patched software <b>502</b>(PP<b>2</b>) that includes the second update visits the given URL <b>106</b>. If an exploit is not detected (at star <b>512</b>), then it is apparent (at block <b>514</b>) that the exploited vulnerability in software <b>502</b> is fixed by the second update. If an exploit is detected (at star <b>512</b>), then the exploit investigation is further escalated by using a fully-patched software <b>502</b>(FP) version that includes the latest update. </p>
+<p id="p-0054" num="0053"> Thus, fully-patched software <b>502</b>(FP) that includes the latest update visits the given URL <b>106</b>. If an exploit is not detected (at star <b>516</b>), then it is apparent (at block <b>518</b>) that the exploited vulnerability in software <b>502</b> is fixed by the latest update. If an exploit is detected (at star <b>516</b>), then it is apparent that a so-called zero-day exploit has been detected (at block <b>520</b>). A zero-day exploit is considered to be an exploit that exists before the patch for the exploited vulnerability is released. The vulnerability related to the zero-day exploit can be known or unknown generally (e.g., to the public) at the time of detecting the zero-day exploit. </p>
+<heading level="2" id="h-0009">Example Implementations of Analyses of Sites Involved in Exploits </heading>
+<p id="p-0055" num="0054"> <figref idref="DRAWINGS">FIG. 6</figref> is a block diagram of an example site visitation trace mechanism <b>600</b> for a strider tracer module <b>310</b>. As illustrated, browser <b>108</b> visits four (4) sites as represented by URLS <b>106</b>(A), <b>106</b>(B), <b>106</b>(C), and <b>106</b>(D). These site visitations include three (3) redirections <b>602</b>(<b>1</b>), <b>602</b>(<b>2</b>), and <b>602</b>(<b>3</b>). Strider tracer module <b>310</b> is capable of tracing these four (4) site visitations and producing trace file <b>604</b>. Trace file <b>604</b> includes, possibly in addition to other events that have been traced, a visited URL list <b>606</b> having four entries. These four entries are URL <b>106</b>(A), URL <b>106</b>(B), URL <b>106</b>(C), and URL <b>106</b>(D). </p>
+<p id="p-0056" num="0055"> In a described implementation, strider tracer module <b>310</b> traces the actions that occur within the machine, including URL redirections. Alternatively, the URL redirections may be traced by a separate module, or they may be separated into sub-modules, and so forth. Regardless, URL tracing may be accomplished at any of several possible layers. Examples include implementing the URL tracer as a DLL that loads into the browser and implementing the URL tracer as a proxy, which may be implemented as a service or some separate executable. For instance, a proxy may register itself with the system and have browser http requests routed through the proxy. Another example is implementing and installing a Winsock Layered Service provider, which is a type of DLL. This provider intercepts network traffic on the machine and inspects and traces the traffic generated from the browser. Another example is implementing a driver that intercepts network traffic at the kernel level. </p>
+<p id="p-0057" num="0056"> Site redirection is a browser concept that enables a browser to be redirected from one site to one or more other sites. It is capable of providing modularity on the internet. The redirection may occur without the authorization, or even knowledge, of the user. Especially when the site redirection occurs without the knowledge of the user, redirection may be more precisely termed a &#x201c;cross-domain auto-visit&#x201d;. For most exploit scenarios, the page content stays at the URL to which the user originally directed a browser while the other URL(s) are being auto-visited by the browser under the cover. Although there are legitimate purposes to redirection that benefit web site operators and browser users alike, site redirection can also be used for nefarious purposes. For example, it is often used by exploit providers to hide their identity and/or make exploit detection more difficult to track and prevent. The exploit &#x201c;experts&#x201d; pay provider sites to redirect clients to their exploitive sites. Malware development companies then pay exploiters to install their software. </p>
+<p id="p-0058" num="0057"> As illustrated, browser <b>108</b> is directed by a user to visit URL <b>106</b>(A). The information (e.g., hypertext markup language (HTML) data) that is received from URL <b>106</b>(A) causes browser <b>108</b> to be redirected <b>602</b>(<b>1</b>) to URL <b>106</b>(B). The information received from URL <b>106</b>(B) causes browser <b>108</b> to be redirected to URL <b>106</b>(C). The information received from URL <b>106</b>(C) causes browser <b>108</b> to be redirected to URL <b>106</b>(D). One or more of these URLs <b>106</b>(A), <b>106</b>(B), <b>106</b>(C), and <b>106</b>(D) may attempt (whether or not successfully) to accomplish an exploit. Although not so illustrated by the redirection chain of <figref idref="DRAWINGS">FIG. 6</figref>, information received from a single URL <b>106</b> may cause multiple redirections <b>602</b> to multiple other URLs <b>106</b>. Situations in which a single URL <b>106</b> initiates multiple auto-visits of other URLs may be envisioned as a branching tree of redirections. These are also handled by site visitation trace mechanism <b>600</b> with strider tracer module <b>310</b>. </p>
+<p id="p-0059" num="0058"> As described herein above, strider tracer module <b>310</b> traces events that occur within a system. These events are logged into trace file <b>604</b>. In addition to file reads/writes registry changes, etc., strider tracer module <b>310</b> traces the sites that are visited by browser <b>108</b>. It traces URLs <b>106</b> that are visited directly and those that are visited indirectly via redirections <b>602</b>. These traced sites are included in visited URL list <b>606</b> as part of trace file <b>604</b>. The traced sites may be further divided between directly-visited sites (e.g., URL <b>106</b>(A)) and indirectly-visited or redirected sites (e.g., URLs <b>106</b>(B), <b>106</b>(C), <b>106</b>(D)). Also, each may be listed separately, directly-visited sites may be excluded, and so forth. </p>
+<p id="p-0060" num="0059"> By further investigating the URLs <b>106</b> included within URL list <b>606</b>, site (and page) interrelationships can be gleaned. The knowledge of such interrelationships can be magnified if combined with other visited URL lists <b>606</b> from other trace files <b>604</b>. Moreover, the complexity of interrelationships between content providers and exploit providers can be further illuminated if visited URL lists <b>606</b> are recursively analyzed. </p>
+<p id="p-0061" num="0060"> For example, each URL <b>106</b> that is listed in visited URL list <b>606</b> can be fed back into the honey monkey system in order to direct a browser <b>108</b> to visit each of them. Visitation of each of these URLs <b>106</b> produces a new visited URL list <b>606</b>. These new visited URL lists <b>606</b> are likewise visited. This recursive process continues for each branch until URLs that are included on a visited URL list <b>606</b> does not produce any redirections. The result is a dynamically generated tree in which each node is visited down each branch until each leaf is reached. Such a tree may be traversed depth first or breadth first. </p>
+<p id="p-0062" num="0061"> In other words, visiting each URL <b>106</b> on a visited URL list <b>606</b> creates another visited URL list <b>606</b>. For this reason, generational terminology (e.g., parent-child-grandchild) is adopted to describe in greater detail this recursive analysis of visited URL lists <b>606</b>. More specifically, an initial visited URL list <b>606</b> that is generated from a general pool of URLs is termed the parent visited URL list. Visited URL lists that are generated by visiting individual URLs <b>106</b> on the parent visited URL list are termed child visited URL lists. The URLs listed on the child visited URL lists are termed child URLs. Visited URL lists that are generated by visiting individual child URLs <b>106</b> on a child visited URL list are termed grandchild visited URL lists that are populated with grandchildren URLs. The process continues recursively until a child, grandchild, great-grandchild, etc. does not beget another visited URL list <b>606</b>. </p>
+<p id="p-0063" num="0062"> <figref idref="DRAWINGS">FIG. 7</figref> is a flow diagram <b>700</b> that illustrates an example of a method for generating a topology graph that shows relationships between and among sites that are involved in exploit behavior. Flow diagram <b>700</b> includes eight (8) blocks <b>702</b>-<b>716</b>. Although the actions of flow diagram <b>700</b> may be performed in other environments and with a variety of hardware and software combinations, a site visitation trace mechanism <b>600</b> (of <figref idref="DRAWINGS">FIG. 6</figref>) is used to further illuminate the method of flow diagram <b>700</b>. Flow diagram <b>700</b> is a recursive method that takes a visited URL list <b>606</b> and deems it a parent visited URL list that can be used to create children visited URL lists. </p>
+<p id="p-0064" num="0063"> At block <b>702</b>, a parent visited URL list is extracted from a trace file. For example, a visited URL list <b>606</b> may be extracted from a trace file <b>604</b>. At block <b>704</b>, the first URL of the parent visited URL list is visited. In this example, the parent visited URL list is divided between directly-visited site(s) and indirectly-visited or redirected site(s). When focusing on the redirections in a recursive analysis, the directly-visited site is ignored and the first redirected site in the listing is visited. In accordance with the example of <figref idref="DRAWINGS">FIG. 6</figref>, the site of URL <b>106</b>(B) is thus visited for block <b>704</b>. </p>
+<p id="p-0065" num="0064"> At block <b>706</b>, a child visited URL list is produced. For example, a child visited URL list (not separately shown) is produced as a result of directly visiting URL <b>106</b>(B) of the parent visited URL list <b>606</b>. At block <b>708</b>, each child URL of the child visited URL list is recursively visited, too. In other words, each visited child URL may beget a grandchild visited URL list that includes one or more grandchildren URLs. The sites listed on the grandchildren URL lists that are created by visiting each child URL of the child visited URL list are also visited. The recursive process continues until each child URL, grandchild URL, great-grandchild URL, etc. does not beget another visited URL list <b>606</b>. </p>
+<p id="p-0066" num="0065"> At block <b>710</b>, site, page, and redirection relationships are recorded. For example, the sites that are visited, the pages that they host or serve, and the redirections between and among them may be stored into memory for subsequent manipulation (e.g., automated analysis, graphing of the data, etc.). </p>
+<p id="p-0067" num="0066"> At block <b>712</b>, it is determined if all of the parent URLs of the parent visited URL list have been visited. If not then the next parent URL of the parent visited URL list is selected (at block <b>714</b>) and the method of flow diagram <b>700</b> continues from block <b>706</b>. </p>
+<p id="p-0068" num="0067"> If, on the other hand, all of the parent URLs of the parent visited URL list have been visited (as determined at block <b>712</b>), then a topology graph of URL redirection relationships is created at block <b>716</b>. For example, the site redirections <b>602</b> between and among different sites and their hosted pages may be indicated in a topology graph. Sites may be identified as being content provider sites or exploit provider sites. An example topology graph is described below with particular reference to <figref idref="DRAWINGS">FIG. 8</figref>. </p>
+<p id="p-0069" num="0068"> <figref idref="DRAWINGS">FIG. 8</figref> is an example exploit topology graph <b>800</b> showing relationships between and among sites that are involved in exploit behavior. As illustrated, topology graph <b>800</b> includes site nodes <b>802</b> that are represented by circles and page nodes <b>804</b> that are represented by rectangles. Redirections are represented by thick arrows <b>602</b>. There are content provider site nodes <b>802</b>(CP) and exploit provider site nodes <b>802</b>(EP). There are also content provider page nodes <b>804</b>(CP) and exploit provider page nodes <b>804</b>(EP). </p>
+<p id="p-0070" num="0069"> Generally, page nodes may be differentiated from site nodes by varying the shape, color, size, some combination thereof, etc. of the symbols representing the nodes. Also, the serving relationship between sites and pages may be differentiated from redirection relationships by line style, by color, by line thickness, by some combination thereof, and so forth. Other connection relationships may be similarly indicated and/or differentiated. The number of connection relationships (e.g., serving, redirection, etc.) between nodes, both connecting to a given node and emanating therefrom, may be indicated by the node symbol. In the illustrated topology graph <b>800</b>, the size of the symbol indicates this overall connectedness, but other changes to the symbols may alternatively be employed. </p>
+<p id="p-0071" num="0070"> Specifically, topology graph <b>800</b> is actually indicative of an example real-world analysis of interrelationships between sites and pages that are involved in exploits. Specifically, there were 17 exploit-URLs layered over 10 sites. Rectangular nodes <b>804</b> represent individual exploit-URLs. Thick solid arrows between rectangles represent automatic traffic redirections <b>602</b>. Circles represent site nodes <b>802</b> that act as an aggregation point for all exploit pages hosted on that site, with each site node <b>802</b> having a relatively thinner edge or line connecting each of its hosted child-page rectangles <b>804</b>. Page nodes <b>804</b>(CP) that do not receive redirected traffic are most likely those of content providers. Page nodes <b>804</b>(EP) that do receive traffic from multiple exploit sites (e.g., the large rectangle R near the bottom of the graph) are most likely those of exploit providers. </p>
+<p id="p-0072" num="0071"> The size of a node is proportional to the number of cross-site arrows directly connected to it, both incoming and outgoing. Such size/numbers provide a good indication of the relative popularity of exploit-URLs and sites. This popularity measure is referred to as being based on connection counts. It is clear from the picture that the large rectangle R and its associated circle C have the highest connection counts. Consequently, blocking access to such a site would likely be the most effective starting point for combating malware realized from the analyzed URLs because it would disrupt nearly half of the exploit network graphed in <figref idref="DRAWINGS">FIG. 8</figref>. </p>
+<p id="p-0073" num="0072"> Two example ranking algorithms that help prioritize the investigations of large-scale topology graphs are described. Examples of such large-scale topology graphs are those with hundreds, thousands, or even more URLs and/or sites. Site-ranking can be based on connection counts and/or on the number of hosted exploit-URLs. </p>
+<p id="p-0074" num="0073"> With respect to site-ranking based on connection counts, each site may be ranked according to the number of connections to and from a site. With a bar graph, for example, a bar height for a given site indicates how many other sites the given site has a direct traffic-redirection relationship with. Hence, the bar height likely reflects how entrenched a site owner is within the exploit community. </p>
+<p id="p-0075" num="0074"> By way of example only, the bar for a given site may also be divided into segments of different filling (e.g., pattern and/or color). For instance, a segment of a first color may represent the number of sites that redirect traffic to the given site. A segment of a second color represents the number of sites to which traffic is redirected from the given site. A segment of a third color indicates the number of sites that have a two-way traffic redirection relationship with the given site. </p>
+<p id="p-0076" num="0075"> Site ranking, categorization, and grouping can play a key role in the anti-exploit process because they serve as the basis for deciding the most effective resource allocation for monitoring, investigating, blocking, and legal actions. For example, exploit sites that are highly-ranked in a site-ranking graph should be heavily monitored because a zero-day exploit page connected to any one of them is likely to affect a large number of web sites. Similarly, legal investigations should focus on the top exploit providers, rather than on the content providers that are mere traffic redirectors and do not actually perform exploits themselves. </p>
+<p id="p-0077" num="0076"> With respect to site-ranking based on the number of hosted exploit-URLs, each site often hosts more than one exploit URL. On a bar graph for example, each site may have a bar entry with the size of the bar dependent on the number of hosted exploit-URLs. This type of ranking helps highlight those web sites whose internal page hierarchy provides important exploit-provider operational insights. First, some web sites host a large number of exploit pages with a well-organized hierarchical structure. Second, some &#x201c;sophisticated&#x201d; web sites use transient URLs that contain random strings. </p>
+<heading level="2" id="h-0010">A Specific Example Multi-Stage Implementation for a Honey Monkey Exploit Detection System </heading>
+<p id="p-0078" num="0077"> The described example specific honey monkey exploit detection system attempts to automatically detect and analyze a network of web sites that exploit web browsers. Aspects of the specific example system described in this section may also be incorporated into the example implementations described herein above. </p>
+<p id="p-0079" num="0078"> <figref idref="DRAWINGS">FIG. 9</figref> illustrates an example honey monkey exploit detection system <b>102</b>*, which is shown inside the dashed-line rectangle, and a surrounding anti-exploit process, which includes both automatic and manual components <b>906</b>. In a described implementation, honey monkey exploit detection system <b>102</b>* includes three stages and receives inputs <b>902</b> and produces outputs <b>904</b>. Multiple example components of an anti-exploit process are shown at <b>906</b>. </p>
+<p id="p-0080" num="0079"> As illustrated, honey monkey exploit detection system <b>102</b>* receives a list of &#x201c;interesting&#x201d; URLs as input <b>902</b>(A) as well as a semi-recursive depth-N crawling of a given exploit URL input <b>902</b>(B). Three outputs <b>904</b> are also shown. These three outputs are: exploit URLs output <b>904</b>(A), topology graph of exploit URLs <b>904</b>(B), and topology graphs of zero-day or latest-patched-vulnerability exploit URLs <b>904</b>(C). </p>
+<heading level="2" id="h-0011">Browser-Based Vulnerability Exploits </heading>
+<p id="p-0081" num="0080"> By way of example only, malicious activities performed by actual web sites exploiting browser vulnerabilities can be divided into four steps: code obfuscation, URL redirection, vulnerability exploitation, and malware installation. </p>
+<p id="p-0082" num="0081"> Code Obfuscation: To complicate investigation and to escape signature-based scanning by anti-virus/anti-spyware software, some web sites use a combination of the following code obfuscation techniques: (1) dynamic code injection using the document.write( ) function inside a script; (2) unreadable, long strings with encoded characters such as &#x201c;%28&#x201d;, &#x201c;&#x26;#104&#x201d;, etc. that are then decoded either by the unescape( ) function inside a script or by the browser; (3) custom decoding routine included in a script; and (4) sub-string replacement using the replace( ) function. Because code-obfuscation is a common technique, it limits the ability of attack-signature-based detectors to detect new attacks that leverage old exploit code. </p>
+<p id="p-0083" num="0082"> URL Redirection: Most malicious web sites automatically redirect browser traffic to additional URLs. Specifically, when a browser visits a primary URL, the response from that URL instructs the browser to automatically visit one or more secondary URLs. This redirection may or may not affect the content that is displayed to the user. Such redirections typically use one of the following mechanisms classified into three categories: (1) protocol redirection using HTTP <b>302</b> Temporary Redirect; (2) HTML tags including &#x3c;iframe&#x3e;, &#x3c;frame&#x3e; inside &#x3c;frameset&#x3e;, and &#x3c;META http-equiv=refresh&#x3e;; (3) script functions including window.location.replace( ), window.location.href( ), window.open( ), window.showModalDialog( ), and &#x3c;link_ID&#x3e;.click( ), and so forth. Because redirection is commonly used by non-malicious sites to legitimately enrich content, simply eliminating redirection from a browser''s functionality would present significant complications </p>
+<p id="p-0084" num="0083"> Vulnerability Exploitation: It is not uncommon to see a malicious web page attempting to exploit multiple browser vulnerabilities in order to maximize the chance of a successful attack. If any of the attempted exploits succeed, malware may be downloaded and executed. Examples of malware include a &#x201c;Trojan downloader&#x201d;, a virus, spyware, and so forth. </p>
+<p id="p-0085" num="0084"> Malware Installation: The purpose of an exploit is almost always to introduce some piece of arbitrary code on the victim machine, as a way to achieve a larger attack goal. There are many different malcode types that are installed through browser exploits including, but not limited to, viruses that infect files, backdoors that open entry points for future unauthorized access, bot programs that allow the attacker to control a whole network of compromised systems, Trojan downloaders that connect to the Internet and download other programs, Trojan droppers that drop files from themselves without accessing the Internet, and Trojan proxies that redirect network traffic. Some spyware programs, and even anti-spyware programs, are also installed through exploit behavior. </p>
+<heading level="2" id="h-0012">Exploit Detection System </heading>
+<p id="p-0086" num="0085"> The example honey monkey exploit detection system <b>102</b>* comprises a 3-stage pipeline of virtual machines (VMs). Stage 1 is scalable honey monkey exploit detection with unpatched VMs and without redirection analysis. Stage 2 is basic (i.e., unscaled) honey monkey exploit detection with (at least partially) un-patched VMs and with redirection analysis. Stage 3 is basic honey monkey exploit detection with nearly fully-patched VMs and with redirection analysis. Fully-patched VMs may also be used to detect true zero-day exploits. </p>
+<p id="p-0087" num="0086"> Given a large list of input URLs <b>902</b>(A) with a potentially low exploit-URL density, each honey monkey in Stage 1 starts in a scalable mode by visiting &#x201c;N&#x201d; URLs simultaneously inside one unpatched VM. The simultaneous visitation may be considered a batched or grouped approach to visiting &#x201c;N&#x201d; URLs. When the honey monkey VM detects an exploit, it switches to a basic, one-URL-per-VM mode to re-test each of the N suspects in the batch so as to determine which one or ones are actually exploit URLs <b>904</b>(A). </p>
+<p id="p-0088" num="0087"> Stage 2 honey monkeys scan those exploit-URLs that are detected from Stage 1 honey monkeys. Stage 2 honey monkeys also perform recursive redirection analysis to identify multiple (up to all) web pages involved in exploit activities and to determine their relationships. Stage 3 honey monkeys continuously scan those exploit-URLs that are detected in Stage 2 using (nearly) fully-patched honey monkey VMs so as to detect attacks exploiting the latest vulnerabilities. </p>
+<p id="p-0089" num="0088"> Exploit Detection </p>
+<p id="p-0090" num="0089"> Although it is possible to detect browser exploits by building signature-based detection code for each known vulnerability or exploit, this approach is manually intensive (and may be unsuitable to the detection of zero-day exploits). To reduce manual costs, a black-box approach that is not signature-based is adopted. More specifically, a honey monkey module launches a browser instance to visit each input URL and then waits for a few minutes to allow downloading of any code that may have a short time delay before installation. </p>
+<p id="p-0091" num="0090"> A group of persistent-state changes is then detected to signal exploitation. Because the honey monkey is not instructed to click on any dialog box to permit software installation, any executable files or registry entries created outside the browser sandbox indicate an exploit. This approach has the additional important advantage of allowing the detection of both known-vulnerability exploits and zero-day exploits in a uniform way. For instance, the same honey monkey module running on un-patched machines to detect a broad range of browser-based vulnerability exploits (as shown in Stages 1 and 2) can run on fully-patched machines to detect zero-day exploits, as shown in Stage 3. </p>
+<p id="p-0092" num="0091"> At the end of each URL visit, the honey monkey module, in conjunction with a strider tracer module, generates a report (e.g., in XML). The report may contain many different types of information. By way of example only, all or part of the following five pieces of information may be included: 
+<ul id="ul0001" list-style="none">
+ <li id="ul0001-0001" num="0000">
+ <ul id="ul0002" list-style="none">
+ <li id="ul0002-0001" num="0092"> (1) Executable files created or modified outside the browser sandbox folders: This is the primary mechanism for exploit detection. It is implemented on top of the strider tracer module, which uses a file-tracing driver to efficiently record up to every single file read/write operation. </li>
+ <li id="ul0002-0002" num="0093"> (2) Processes created: The strider tracer module also tracks all child processes created by the browser process. </li>
+ <li id="ul0002-0003" num="0094"> (3) Windows registry entries created or modified: The strider tracer module additionally includes a driver that efficiently records up to every single registry read/write. To highlight the most critical entries, the registry entries most frequently attacked by spyware, Trojans, rootkits, etc. may be targeted. This allows the honey monkey module to detect exploits that modify critical configuration settings (such as the browser home page and the wallpaper) without creating executable files. </li>
+ <li id="ul0002-0004" num="0095"> (4) Vulnerability exploited: This provides additional information generally. To address limitations of the black-box approach, a vulnerability-specific exploit detector may also be incorporated. A detector may be based on the vulnerability signature of the exploit, rather than on a particular piece of malcode. </li>
+ <li id="ul0002-0005" num="0096"> (5) Redirect-URLs visited: Because malcode is often laundered through other sites, this aspect enables the tracking of redirections to determine both the real source of the malcode and those involved in the distribution chain. </li>
+ </ul>
+ </li>
+</ul>
+</p>
+<p id="p-0093" num="0097"> To ease the cleanup from an infected state, the honey monkey modules are run inside one or more VMs. Upon detecting an exploit, the honey monkey saves its logs and notifies a monkey controller on the host machine. The monkey controller destroys the infected VM and re-spawns or re-instantiates a clean VM and honey monkey module, which then continues to visit the remaining URL list. The monkey controller then passes the detected exploit-URL to the next honey monkey module in the staged pipeline to further investigate the strength of the exploit. </p>
+<p id="p-0094" num="0098"> Redirection Analysis </p>
+<p id="p-0095" num="0099"> In a described implementation, many exploit-URLs that are identified in Stage 1 do not perform the actual exploits. Instead, they act as front-end content providers that serve interesting content in order to attract browser traffic. This traffic is then sold and redirected to back-end exploit providers, which specialize in exploiting clients and installing malware. </p>
+<p id="p-0096" num="0100"> URLs visited through traffic redirection can be tracked with a &#x201c;Browser Helper Object&#x2019; (BHO) running within each browser process or by intercepting and analyzing network packets. When a honey monkey module runs in its &#x201c;redirection analysis&#x201d; mode, any automatically visited URLs are fed back to the system for further investigation. This recursive scanning allows the construction of topology graphs based on traffic redirection. Topology graphs may graph different types of URLs, such as exploit URLs generally <b>904</b>(B), zero-day or latest-patched-vulnerability exploit URLs <b>904</b>(C), some combination thereof and so forth. </p>
+<p id="p-0097" num="0101"> Analysis of topology graphs enables the identification of major exploit providers that receive traffic from a large number of content providers. They also show how exploit providers organize their web pages in a way that facilitates customized malware installations for each of their affiliates. Finally, the web pages that actually perform the exploits may be positively identified by activating an optional feature in the redirection tracker to block all redirection traffic. More specifically, singular URLs that are included as part of a list of redirection URLs may be individually visited by activating a redirection blocking feature, which ensures that only the intended URL is directly visited. Thus, single URLs may be selectively and sequentially visited to determine whether or not each particular page is responsible for performing an exploit. </p>
+<heading level="2" id="h-0013">Anti-Exploit Process </heading>
+<p id="p-0098" num="0102"> An example anti-exploit process involves generating input URL lists <b>902</b>(A) for honey monkey modules to scan and taking various actions based on analyses of the output exploit-URL data <b>904</b>(A). </p>
+<p id="p-0099" num="0103"> Generating Input URL Lists </p>
+<p id="p-0100" num="0104"> In a described implementation, three sources are used for generating &#x201c;interesting&#x201d; URLs <b>902</b>(A) for analysis. The first category is directed to suspicious URLs. Examples include web sites that are known to host spyware or malware, links appearing in phishing or spam emails or instant messages, web pages serving questionable content such as pornography, URL names that are typos of popular sites, web sites involved in DNS cache poisoning, and similar common sources of malicious web content. </p>
+<p id="p-0101" num="0105"> The second category is directed to the most popular web pages. These web pages, if compromised, can potentially infect a large population of users. Examples include the top 100,000 web sites based on browser traffic ranking or the top &#x201c;N&#x201d; million web sites based on click-through counts as measured by search engines. </p>
+<p id="p-0102" num="0106"> The third category is directed to URL lists of a more localized scope. For example, an organization may want to regularly verify that its web pages have not been compromised to exploit visitors. Also, a user may want to investigate whether any recently visited URL was responsible for causing a spyware infection. </p>
+<p id="p-0103" num="0107"> Acting on Output Exploit-URL Data </p>
+<p id="p-0104" num="0108"> There are many options available to combat exploit behavior. Of course, some are more effective than others, especially depending on the exploit context and the resources that are available. Example anti-exploit options are presented in <figref idref="DRAWINGS">FIG. 9</figref> at <b>906</b>. </p>
+<p id="p-0105" num="0109"> Firstly, exploit URLs <b>904</b>(A) may be used in an analysis of exploit URL density or to fix compromised machines. Secondly, topology graphs of exploit URLs <b>904</b>(B) may be provided to an internet safety enforcement team and/or to an anti-spyware team. They may also be used for access blocking to block access to the exploitive URLs. Thirdly, topology graphs of zero-day or latest-patched-vulnerability exploit URLs <b>904</b>(C) may be forwarded to a security response center as well as to browser or related software teams. </p>
+<heading level="2" id="h-0014">Example Device Implementations for Honey Monkey Network Exploration </heading>
+<p id="p-0106" num="0110"> <figref idref="DRAWINGS">FIG. 10</figref> is a block diagram of an example device <b>1002</b> that may be employed in conjunction with honey monkey network exploration. For example, a device <b>1002</b> may realize, execute, or otherwise implement a honey monkey system <b>102</b>. In certain implementations, devices <b>1002</b> are capable of communicating across one or more networks <b>1014</b>, such as an internet, a local area network (LAN), a telephone network, some combination thereof, and so forth. As illustrated, two devices <b>1002</b>(<b>1</b>) and <b>1002</b>(<i>n</i>) are capable of engaging in communication exchanges via network <b>1014</b>. Example relevant communication exchanges include those relating to visiting a network location represented by a URL <b>106</b>, such as a request/response exchange <b>116</b>. </p>
+<p id="p-0107" num="0111"> Generally, device <b>1002</b> may represent a server device; a storage device; a workstation or other general computer device; a set-top box or other television device; a personal digital assistant (PDA), mobile telephone, or other mobile appliance; an electronic machine generally, some combination thereof; and so forth. As illustrated, device <b>1002</b> includes one or more input/output (I/O) interfaces <b>1004</b>, at least one processor <b>1006</b>, and one or more media <b>1008</b>. Media <b>1008</b> includes processor-executable instructions <b>1010</b>. Although not specifically illustrated, device <b>1002</b> may also include other components. </p>
+<p id="p-0108" num="0112"> In a described implementation of device <b>1002</b>, I/O interfaces <b>1004</b> may include (i) a network interface for communicating across network(s) <b>1014</b>, (ii) a display device interface for displaying information on a display screen, (iii) one or more man-machine device interfaces, and so forth. Examples of (i) network interfaces include a network card, a modem, one or more ports, and so forth Examples of (ii) display device interfaces include a graphics driver, a graphics card, a hardware or software driver for a screen/television or printer, and so forth. Examples of (iii) man-machine device interfaces include those that communicate by wire or wirelessly to man-machine interface devices <b>1012</b> (e.g., a keyboard or keypad, a mouse or other graphical pointing device, a remote control, etc.). </p>
+<p id="p-0109" num="0113"> Generally, processor <b>1006</b> is capable of executing, performing, and/or otherwise effectuating processor-executable instructions, such as processor-executable instructions <b>1010</b>. Media <b>1008</b> is comprised of one or more processor-accessible media. In other words, media <b>1008</b> may include processor-executable instructions <b>1010</b> that are executable by processor <b>1006</b> to effectuate the performance of functions by device <b>1002</b>. </p>
+<p id="p-0110" num="0114"> Thus, realizations for honey monkey network exploration may be described in the general context of processor-executable instructions. Generally, processor-executable instructions include routines, programs, applications, coding, modules, protocols, objects, interfaces, components, metadata and definitions thereof, data structures, application programming interfaces (APIs), etc. that perform and/or enable particular tasks and/or implement particular abstract data types. Processor-executable instructions may be located in separate storage media, executed by different processors, and/or propagated over or extant on various transmission media. </p>
+<p id="p-0111" num="0115"> Processor(s) <b>1006</b> may be implemented using any applicable processing-capable technology. Media <b>1008</b> may be any available media that is included as part of and/or accessible by device <b>1002</b>. It includes volatile and non-volatile media, removable and non-removable media, and storage and transmission media (e.g., wireless or wired communication channels). For example, media <b>1008</b> may include an array of disks for longer-term mass storage of processor-executable instructions, random access memory (RAM) for shorter-term storage of instructions that are currently being executed, flash memory for medium to longer term storage, optical disks for portable storage, and/or link(s) on network <b>1014</b> for transmitting code or communications, and so forth. </p>
+<p id="p-0112" num="0116"> As specifically illustrated, media <b>1008</b> comprises at least processor-executable instructions <b>1010</b>. Generally, processor-executable instructions <b>1010</b>, when executed by processor <b>1006</b>, enable device <b>1002</b> to perform the various functions described herein. Examples include, but are not limited to, those of a honey monkey system <b>102</b> or <b>102</b>*(of <figref idref="DRAWINGS">FIGS. 1 and 9</figref>); those of a site visitation trace mechanism <b>600</b> (of <figref idref="DRAWINGS">FIG. 6</figref>); those of flow diagrams <b>200</b>, <b>400</b>, and <b>700</b> (of <figref idref="DRAWINGS">FIGS. 2, 4</figref>, and <b>7</b>); a multi-phase approach such as in block diagram <b>500</b> (of FIG. <b>5</b>), some combination thereof, and so forth. As illustrated in <figref idref="DRAWINGS">FIG. 10</figref>, processor-executable instructions <b>1010</b> may also include a honey monkey module <b>308</b> and/or a strider tracer module <b>310</b> (of <figref idref="DRAWINGS">FIG. 3</figref>) </p>
+<p id="p-0113" num="0117"> The machines, devices, actions, aspects, features, functions, procedures, modules, data structures, schemes, approaches, phases, stages, architectures, components, etc. of <figref idref="DRAWINGS">FIGS. 1-10</figref> are illustrated in diagrams that are divided into multiple blocks. However, the order, interconnections, interrelationships, layout, etc. in which <figref idref="DRAWINGS">FIGS. 1-10</figref> are described and/or shown are not intended to be construed as a limitation, and any number of the blocks can be modified, combined, rearranged, augmented, omitted, etc. in any manner to implement one or more systems, methods, devices, procedures, media, apparatuses, APIs, arrangements, etc. for honey monkey network exploration. </p>
+<p id="p-0114" num="0118"> Although systems, media, devices, methods, procedures, apparatuses, techniques, schemes, approaches, arrangements, and other implementations have been described in language specific to structural, logical, algorithmic, and functional features and/or diagrams, it is to be understood that the invention defined in the appended claims is not necessarily limited to the specific features or acts described above. Rather, the specific features and acts described above are disclosed as example forms of implementing the claims. </p>
+<?detailed-description description="Detailed Description" end="tail"?>
+</description>
+<us-claim-statement>What is claimed is: </us-claim-statement>
+<claims id="claims">
+<claim id="CLM-00001" num="00001">
+<claim-text><b>1</b>. A system comprising: 
+<claim-text>a browser that is capable of visiting network locations as represented by uniform resource locators (URLs); and </claim-text>
+<claim-text>a browser-based vulnerability exploit detector that directs the browser to visit a given URL by making an information request to the given URL; the browser-based vulnerability exploit detector adapted to detect if the given URL accomplishes an exploit on the system after the browser makes the information request to the given URL. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00002" num="00002">
+<claim-text><b>2</b>. The system as recited in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the browser-based vulnerability exploit detector comprises a honey monkey module and a tracer module; and wherein the honey monkey module directs the browser to make the information request to the given URL, and the tracer module traces events that occur within the system after the information request is made. </claim-text>
+ </claim>
+<claim id="CLM-00003" num="00003">
+<claim-text><b>3</b>. The system as recited in <claim-ref idref="CLM-00002">claim 2</claim-ref>, wherein the tracer module produces a trace file that includes at least a list of URLs to which the browser is redirected. </claim-text>
+ </claim>
+<claim id="CLM-00004" num="00004">
+<claim-text><b>4</b>. The system as recited in <claim-ref idref="CLM-00002">claim 2</claim-ref>, wherein the tracer module produces a trace file that includes at least a list of writes that occur outside a browser sandbox. </claim-text>
+ </claim>
+<claim id="CLM-00005" num="00005">
+<claim-text><b>5</b>. The system as recited in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the system further comprises: 
+<claim-text>at least one virtual machine; and </claim-text>
+<claim-text>wherein the browser and at least a portion of the browser-based vulnerability exploit detector execute on the at least one virtual machine. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00006" num="00006">
+<claim-text><b>6</b>. The system as recited in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the system destroys the at least one virtual machine when an exploit against the at least one virtual machine is detected; and wherein the system re-instantiates a clean virtual machine to continue exploration of other URLs. </claim-text>
+ </claim>
+<claim id="CLM-00007" num="00007">
+<claim-text><b>7</b>. The system as recited in <claim-ref idref="CLM-00001">claim 1</claim-ref>, wherein the system further comprises: 
+<claim-text>multiple browsers that have different levels of patching, including a lower patched browser version and a higher patched browser version. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00008" num="00008">
+<claim-text><b>8</b>. The system as recited in <claim-ref idref="CLM-00007">claim 7</claim-ref>, wherein the browser-based vulnerability exploit detector directs the lower patched browser version to visit the given URL and detects if the given URL accomplishes an exploit in conjunction with the lower patched browser version; and wherein the browser-based vulnerability exploit detector directs the higher patched browser version to visit the given URL if an exploit is detected as being accomplished in conjunction with the lower patched browser version. </claim-text>
+ </claim>
+<claim id="CLM-00009" num="00009">
+<claim-text><b>9</b>. The system as recited in <claim-ref idref="CLM-00008">claim 8</claim-ref>, wherein the browser-based vulnerability exploit detector attempts to detect if the given URL accomplishes an exploit in conjunction with the higher patched browser version; and wherein the browser-based vulnerability exploit detector determines that the exploit assaults a vulnerability remedied by a patch for the higher patched browser version if the browser-based vulnerability exploit detector does not detect that the given URL accomplishes an exploit in conjunction with the higher patched browser version. </claim-text>
+ </claim>
+<claim id="CLM-00010" num="00010">
+<claim-text><b>10</b>. One or more processor-accessible media comprising processor-executable instructions that, when executed, direct a device to perform actions comprising: 
+<claim-text>visiting a uniform resource locator (URL) of a parent list of redirection URLs; </claim-text>
+<claim-text>producing a child list of redirection URLs from the action of visiting; </claim-text>
+<claim-text>recursively visiting child URLs of the child list of redirection URLs to discover redirection relationships of the URLs that are visited; and </claim-text>
+<claim-text>creating a graph that includes the URLs that are visited and that indicates the discovered redirection relationships. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00011" num="00011">
+<claim-text><b>11</b>. The one or more processor-accessible media as recited in <claim-ref idref="CLM-00010">claim 10</claim-ref>, comprising the processor-executable instructions that, when executed, direct the device to perform further actions comprising: 
+<claim-text>visiting a given URL; </claim-text>
+<claim-text>monitoring URL redirections resulting from the action of visiting the given URL; and </claim-text>
+<claim-text>tracing the monitored URL redirections to produce the parent list of redirection URLs. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00012" num="00012">
+<claim-text><b>12</b>. The one or more processor-accessible media as recited in <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the action of creating further comprises an action of: 
+<claim-text>visually differentiating between site nodes and page nodes in the graph. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00013" num="00013">
+<claim-text><b>13</b>. The one or more processor-accessible media as recited in <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the action of creating further comprises actions of: 
+<claim-text>representing URLs with corresponding symbols; and </claim-text>
+<claim-text>visually indicating a number of redirections that are associated with each URL by changing the corresponding symbols. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00014" num="00014">
+<claim-text><b>14</b>. The one or more processor-accessible media as recited in <claim-ref idref="CLM-00010">claim 10</claim-ref>, wherein the action of creating further comprises an action of: 
+<claim-text>visually differentiating between (i) connections that represent relationships between site nodes and their hosted page nodes and (ii) connections that represent redirection relationships. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00015" num="00015">
+<claim-text><b>15</b>. The one or more processor-accessible media as recited in <claim-ref idref="CLM-00010">claim 10</claim-ref>, comprising the processor-executable instructions that, when executed, direct the device to perform further actions comprising: 
+<claim-text>visiting each respective URL of the parent list of redirection URLs; </claim-text>
+<claim-text>producing respective child lists of redirection URLs from the action of visiting each respective URL; and </claim-text>
+<claim-text>recursively visiting child URLs of the child lists of redirection URLs to discover redirection relationships of the URLs that are visited. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00016" num="00016">
+<claim-text><b>16</b>. A method comprising: 
+<claim-text>requesting information from a targeted network location as represented by a uniform resource locator (URL); </claim-text>
+<claim-text>receiving a response from the targeted URL; </claim-text>
+<claim-text>tracing events that occur on a machine; </claim-text>
+<claim-text>ascertaining if an illicit event occurred based on the traced events; and </claim-text>
+<claim-text>determining that an exploit has been accomplished by the targeted URL if an illicit event is ascertained to have occurred. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00017" num="00017">
+<claim-text><b>17</b>. The method as recited in <claim-ref idref="CLM-00016">claim 16</claim-ref>, further comprising: 
+<claim-text>waiting a predetermined time period (i) between the receiving and the ascertaining or (ii) between the requesting and the ascertaining. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00018" num="00018">
+<claim-text><b>18</b>. The method as recited in <claim-ref idref="CLM-00016">claim 16</claim-ref>, further comprising: 
+<claim-text>starting a virtual machine; and </claim-text>
+<claim-text>launching a browser; </claim-text>
+<claim-text>wherein the requesting and the receiving are effected, at least partially, by the browser; and </claim-text>
+<claim-text>wherein the method further comprises: </claim-text>
+<claim-text>terminating the virtual machine if it is determined that an exploit has been accomplished on the virtual machine by the targeted URL. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00019" num="00019">
+<claim-text><b>19</b>. The method as recited in <claim-ref idref="CLM-00016">claim 16</claim-ref>, wherein the ascertaining comprises: 
+<claim-text>ascertaining if a write occurred outside of a browser sandbox. </claim-text>
+</claim-text>
+ </claim>
+<claim id="CLM-00020" num="00020">
+<claim-text><b>20</b>. The method as recited in <claim-ref idref="CLM-00016">claim 16</claim-ref>, wherein the requesting and the receiving are effected, at least partially, by a lower patched browser version; and wherein the method is repeated with the requesting and the receiving being effected, at least partially, by a higher patched browser version if it is determined that an exploit has been accomplished when the requesting and the receiving are first effected, at least partially, by the lower patched browser version.</claim-text>
+ </claim>
+</claims>
+</us-patent-application>
+')[0m
+Redirected to http://localhost:3000/documents/2
+Completed in 266ms (DB: 2) | 302 Found [http://localhost/documents]
+
+
+Processing DocumentsController#show (for 127.0.0.1 at 2010-03-14 18:10:02) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mDocument Load (1.3ms)[0m   [0mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;36;1mDocument::Version Load (0.8ms)[0m   [0;1mSELECT * FROM "document_versions" WHERE ("document_versions".document_id = 2) [0m
+Rendering template within layouts/documents
+Rendering documents/show
+Completed in 147ms (View: 134, DB: 2) | 200 OK [http://localhost/documents/2]
+
+
+Processing DocumentsController#index (for 127.0.0.1 at 2010-03-14 18:10:19) [GET]
+  [4;35;1mDocument Load (1.4ms)[0m   [0mSELECT * FROM "documents" [0m
+Rendering template within layouts/documents
+Rendering documents/index
+Completed in 30ms (View: 19, DB: 1) | 200 OK [http://localhost/documents/]
+
+
+Processing DocumentsController#show (for 127.0.0.1 at 2010-03-14 18:11:59) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDocument Load (0.4ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;35;1mDocument::Version Load (0.6ms)[0m   [0mSELECT * FROM "document_versions" WHERE ("document_versions".document_id = 2) [0m
+Rendering template within layouts/documents
+Rendering documents/show
+Completed in 150ms (View: 137, DB: 1) | 200 OK [http://localhost/documents/2]
+
+
+Processing DocumentsController#destroy (for 127.0.0.1 at 2010-03-14 18:25:10) [DELETE]
+  Parameters: {"authenticity_token"=>"gz/2oqNr2vUGTOOBsySsp61ePYWsvEeYFpxXDJZY1pQ=", "id"=>"2"}
+  [4;36;1mDocument Load (0.7ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 2) [0m
+  [4;35;1mDocument::Version Delete all (0.7ms)[0m   [0mDELETE FROM "document_versions" WHERE ((document_id = 2)) [0m
+  [4;36;1mDocument Destroy (0.2ms)[0m   [0;1mDELETE FROM "documents" WHERE "id" = 2[0m
+Redirected to http://localhost:3000/documents
+Completed in 21ms (DB: 2) | 302 Found [http://localhost/documents/2]
+
+
+Processing DocumentsController#index (for 127.0.0.1 at 2010-03-14 18:25:10) [GET]
+  [4;35;1mDocument Load (0.5ms)[0m   [0mSELECT * FROM "documents" [0m
+Rendering template within layouts/documents
+Rendering documents/index
+Completed in 17ms (View: 6, DB: 1) | 200 OK [http://localhost/documents]
+
+
+Processing DocumentsController#edit (for 127.0.0.1 at 2010-03-14 18:45:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDocument Load (0.2ms)[0m   [0;1mSELECT * FROM "documents" WHERE ("documents"."id" = 1) [0m
+Rendering template within layouts/documents
+Rendering documents/edit
+Completed in 88ms (View: 78, DB: 0) | 200 OK [http://localhost/documents/1/edit]

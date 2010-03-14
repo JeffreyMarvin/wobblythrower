@@ -41,7 +41,13 @@ class DocumentsController < ApplicationController
   # POST /documents
   # POST /documents.xml
   def create
-    @document = Document.new(params[:document])
+    
+    uploaded_file = params[:xml_file]
+    data = uploaded_file.read if uploaded_file.respond_to? :read
+    
+    @document = Document.new({:title => params[:title], :content => data})
+    
+#    @document = Document.new(params[:document])
 
     respond_to do |format|
       if @document.save
@@ -58,10 +64,14 @@ class DocumentsController < ApplicationController
   # PUT /documents/1
   # PUT /documents/1.xml
   def update
+    
+    uploaded_file = params[:xml_file]
+    data = uploaded_file.read if uploaded_file.respond_to? :read
+    
     @document = Document.find(params[:id])
 
     respond_to do |format|
-      if @document.update_attributes(params[:document])
+      if @document.update_attributes({:title => params[:title], :content => data})
         flash[:notice] = 'Document was successfully updated.'
         format.html { redirect_to(@document) }
         format.xml  { head :ok }

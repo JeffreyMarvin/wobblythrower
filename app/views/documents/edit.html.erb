@@ -1,20 +1,17 @@
-<h1>Editing document</h1>
+<h1>New document</h1>
 
-<% form_for(@document) do |f| %>
-  <%= f.error_messages %>
-
-  <p>
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </p>
-  <p>
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </p>
-  <p>
-    <%= f.submit 'Update' %>
-  </p>
-<% end %>
+<% form_tag( {:action => 'update'}, {:multipart => true} ) do -%> <p>
+<p>
+	<label for="title">Title:</label><br />
+    <%= text_field_tag "title" %>
+</p>
+<p>
+<%= file_field_tag "xml_file" %>
+</p>
+<p>
+<%= submit_tag "Upload" %>
+</p>
+<% end -%>
 
 <%= link_to 'Show', @document %> |
 <%= link_to 'Back', documents_path %>
