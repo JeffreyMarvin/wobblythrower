@@ -46,7 +46,7 @@ class DocumentsController < ApplicationController
     doc = REXML::Document.new uploaded_file
     doc = parse_xml(doc)
     data = ""
-    doc.write data
+    doc.write data, 0
     
 #    data = uploaded_file.read if uploaded_file.respond_to? :read
     
@@ -74,7 +74,7 @@ class DocumentsController < ApplicationController
     doc = REXML::Document.new uploaded_file
     doc = parse_xml(doc)
     data = ""
-    doc.write data
+    doc.write data, 0
     
 #    data = uploaded_file.read if uploaded_file.respond_to? :read
     
@@ -138,7 +138,41 @@ class DocumentsController < ApplicationController
   end
   
   def parse_xml(doc)
-    return doc
+    new_doc = REXML::Document.new
+    new_doc << doc.xml_decl
+    new_doc << doc.doctype
+    new_element = doc.elements[1].clone
+    new_element = parse_children(new_element, doc.elements[1].children) if doc.elements[1].has_elements?
+    new_doc.add_element(new_element)
+    return new_doc
+  end
+  
+  def parse_children(parent, children)
+    children.each do |child|
+      if child.respond_to?("has_elements?")
+        if child.has_elements?
+          new_element = REXML::Element.new("div")
+          new_element.add_attribute("class", child.name)
+          new_element.add_attributes(child.attributes) if child.has_attributes?
+          new_element = parse_children(new_element, child.children) if child.has_elements?
+          parent.add_element(new_element)
+        elsif child.has_text?
+          new_element = REXML::Element.new("div")
+          new_element.add_attribute("class", child.name)
+          new_element.add_attributes(child.attributes) if child.has_attributes?
+          new_element.add_text(child.get_text)
+          parent.add_element(new_element)
+        else
+            new_element = REXML::Element.new("div")
+            new_element.add_attribute("class", child.name)
+            new_element.add_attributes(child.attributes) if child.has_attributes?
+            parent.add_element(new_element)
+        end
+      else
+#        parent.add_element(child)
+      end
+    end
+    return parent
   end
 
 end
