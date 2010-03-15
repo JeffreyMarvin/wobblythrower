@@ -157,11 +157,24 @@ class DocumentsController < ApplicationController
           new_element = parse_children(new_element, child.children) if child.has_elements?
           parent.add_element(new_element)
         elsif child.has_text?
-          new_element = REXML::Element.new("div")
-          new_element.add_attribute("class", child.name)
-          new_element.add_attributes(child.attributes) if child.has_attributes?
-          new_element.add_text(child.get_text)
-          parent.add_element(new_element)
+          if child.name == 'p' || child.name == 'img' || child.name == 'b'
+            new_element = child.clone
+            new_element.add_text(child.get_text)
+            parent.add_element(new_element)
+          elsif child.name == 'heading'
+            name = "h" + child.attributes["level"]
+            child.attributes.delete "level"
+            new_element = REXML::Element.new(name)
+            new_element.add_attributes(child.attributes) if child.has_attributes?
+            new_element.add_text(child.get_text)
+            parent.add_element(new_element)
+          else
+            new_element = REXML::Element.new("div")
+            new_element.add_attribute("class", child.name)
+            new_element.add_attributes(child.attributes) if child.has_attributes?
+            new_element.add_text(child.get_text)
+            parent.add_element(new_element)
+          end
         else
             new_element = REXML::Element.new("div")
             new_element.add_attribute("class", child.name)
