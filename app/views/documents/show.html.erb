@@ -1,3 +1,4 @@
+<head>
 <p>
   <b>Title:</b>
   <%=h @document.title %>
@@ -7,6 +8,17 @@
   <b>Content:</b>
   <%= textilize(@document.content) %>
 </p>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	("div[id]").mouseenter(function(){
+		$(this).addclass("over");
+	});
+	("div[id]").mouseleave(function(){
+		$(this).removeclass("over");
+	}); 
+});
+</script>
 
 <% @documentversion.reverse.each do |version| %>
   Version <%= version.version %> Updated <%= version.updated_at %>

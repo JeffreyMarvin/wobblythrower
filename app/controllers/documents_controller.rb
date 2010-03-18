@@ -52,8 +52,8 @@ class DocumentsController < ApplicationController
       zip = Zip::ZipFile.open(file.path)
       str = "public/assets/xml/" + zip.each.entries[1].name[0..(zip.each.entries[1].name =~ /\//)]
       FileUtils.mkdir_p str
-      str = "public/images/" + zip.each.entries[1].name[0..(zip.each.entries[1].name =~ /\//)]
-      FileUtils.mkdir_p str
+      str = "/images/" + zip.each.entries[1].name[0..(zip.each.entries[1].name =~ /\//)]
+      FileUtils.mkdir_p "documents" + str
       doc = REXML::Document.new
       
       zip.each do |single_file|
@@ -61,7 +61,7 @@ class DocumentsController < ApplicationController
           single_file.extract(File.join("public/assets/xml/", single_file.name))
           doc = REXML::Document.new File.new(File.join("public/assets/xml/", single_file.name))
         else
-          single_file.extract(File.join("public/images/", single_file.name))
+          single_file.extract(File.join("documents/images/", single_file.name))
         end
       end
       
@@ -194,12 +194,6 @@ class DocumentsController < ApplicationController
             end
           end
           parent.add_element(new_element)
-        elsif child.has_elements?  
-            new_element = REXML::Element.new("div")
-            new_element.add_attribute("class", child.name)
-            new_element.add_attributes(child.attributes) if child.has_attributes?
-            new_element = parse_children(new_element, child.children, path_to_images) if child.has_elements? || child.has_text?
-            parent.add_element(new_element)
         elsif child.has_text?
           if child.name == 'p' || child.name == 'b'|| child.name == 'i' || child.name == 'u'
             new_element = child.clone
@@ -219,6 +213,12 @@ class DocumentsController < ApplicationController
             new_element = parse_children(new_element, child.children, path_to_images) if child.has_elements? || child.has_text?
             parent.add_element(new_element)
           end
+        elsif child.has_elements?  
+            new_element = REXML::Element.new("div")
+            new_element.add_attribute("class", child.name)
+            new_element.add_attributes(child.attributes) if child.has_attributes?
+            new_element = parse_children(new_element, child.children, path_to_images) if child.has_elements? || child.has_text?
+            parent.add_element(new_element)
         else
             new_element = REXML::Element.new("div")
             new_element.add_attribute("class", child.name)
