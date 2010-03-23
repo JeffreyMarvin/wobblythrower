@@ -5,10 +5,11 @@
 	<div class='comment-input'>
 		<form action="/comments/new">
 			<label for='username'>
-		        Comment
-		        <input name='comment' type='text' />
-		      </label>
-		      <input type='submit' value='Submit Comment' />
+				Comment
+				<input name='comment' type='text' />
+			</label>
+			<input name="<%= request_forgery_protection_token.to_s %>" type="hidden" value="<%= form_authenticity_token %>" />
+			<input type='submit' value='Submit Comment' />
 		</form>
 	</div>
 	<div class='comments'></div>
@@ -44,60 +45,49 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
 <script type="text/javascript" >
 
-var app = {
-	
-	setupNodeHover: function(){
-		$('[num]').mouseenter(function(e){
-			$(this).addClass('over');
-			return false;
-		});
-
-		$('[num]').mouseleave(function(e){
-			$(this).removeClass('over');
-			return false;
-		});
-	},
-	
-	setupNodeClick: function(){
-		$('[num]').click(function(e){
-			document_id = <%= @document %>;
-			$node_id = $(this)['id'];
-			$('.dialog .text:first').text($(this).text());
-			var.getComments(document_id, node_id);
-			$('.dialog:first').dialog({modal: true});
-			$form = $('.dialog .form:first');
-			$form.submit(function(e){
-				e.preventDefault();
-				$.post(
-					$form.attr('action'), 
-					{
-						document_id: document_id, 
-						node_id: node_id, 
-						comment_text: $form.find("input[type='text']:first").text()
-					}, 
-					function()
-					{
-						var.getComments(document_id, node_id);
-					}
-				);
-			};
-		});
-	},
-	
-	getComments: function(document_id, node_id){
-		$('.dialog .comments').text("");
-		$('.dialog .comments').text($.get("/comments/show/" + document_id + "/" + node_id));
-	}
-	
-}
-
 jQuery(function(){
 	
 	$('.dialog').hide();
 	
-	var.setupNodeHover();
+	$('[num]').mouseenter(function(e){
+		$(this).addClass('over');
+		return false;
+	});
+
+	$('[num]').mouseleave(function(e){
+		$(this).removeClass('over');
+		return false;
+	});
 	
-	var.setupNodeClick();
+	$('[num]').click(function(e){
+		
+		d_id = <%= @document.id %>;
+		n_id = $(this)[0]['id'];
+		
+		$dialog = $('.dialog:first');
+		
+		$dialog.find('.text:first').text($(this).text());
+		$dialog.find('.comments:first').text($.get("/comments/" + d_id + '?node_id=' + n_id));
+		$dialog.dialog();
+		
+		$form = $dialog.find('form:first');
+		$form.submit(function(e){
+			e.preventDefault();
+			$.post(
+				$form.attr('action'), 
+				{
+					comment_text: $form.find("input[type='text']:first")[0]["value"],
+					document_id: d_id, 
+					node_id: n_id,
+					authenticity_token: $form.find("input[type='hidden']:first")[0]["value"]
+				}, 
+				function()
+				{
+					$dialog.find('.comments:first').text($.get("/comments/" + d_id + "?node_id=" + n_id));
+				}
+			);
+		});
+	});
 	
 });
 
