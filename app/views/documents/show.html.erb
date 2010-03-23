@@ -1,18 +1,7 @@
 <head>
 
 <div class='dialog'>
-	<div class='text'></div>
-	<div class='comment-input'>
-		<form action="/comments">
-			<label for='username'>
-				Comment
-				<input name='comment' type='text' />
-			</label>
-			<input name="<%= request_forgery_protection_token.to_s %>" type="hidden" value="<%= form_authenticity_token %>" />
-			<input type='submit' value='Submit Comment' />
-		</form>
-	</div>
-	<div class='comments'></div>
+
 </div>
 
 <p>
@@ -66,6 +55,17 @@ jQuery(function(){
 		
 		$dialog = $('.dialog:first');
 		
+		$dialog.empty();
+		$("<div class='text'></div>").appendTo($dialog);
+		$comment_input = $("<div class='comment-input'></div>");
+		$comment_form = $("<form action='/comments'></form>");
+		$("<label for='username'>Comment<input name='comment' type='text' /></label>").appendTo($comment_form);
+		$("<input name='<%= request_forgery_protection_token.to_s %>' type='hidden' value='<%= form_authenticity_token %>' />").appendTo($comment_form);
+		$("<input type='submit' value='Submit Comment' />").appendTo($comment_form);
+		$comment_form.appendTo($comment_input);
+		$comment_input.appendTo($dialog);
+		$("<div class='comments'></div>").appendTo($dialog);
+		
 		$dialog.find('.text:first').text($(this).text());
 		$dialog.find('.comments:first').load("/comments/" + d_id + '?node_id=' + n_id);
 		$dialog.dialog();
@@ -83,6 +83,7 @@ jQuery(function(){
 				}, 
 				function()
 				{
+					$form[0].reset();
 					$dialog.find('.comments:first').load("/comments/" + d_id + '?node_id=' + n_id);
 				}
 			);
