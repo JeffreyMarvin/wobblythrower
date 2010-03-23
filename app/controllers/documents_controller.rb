@@ -52,8 +52,8 @@ class DocumentsController < ApplicationController
       zip = Zip::ZipFile.open(file.path)
       str = "public/assets/xml/" + zip.each.entries[1].name[0..(zip.each.entries[1].name =~ /\//)]
       FileUtils.mkdir_p str
-      str = "/images/" + zip.each.entries[1].name[0..(zip.each.entries[1].name =~ /\//)]
-      FileUtils.mkdir_p "documents" + str
+      str = "images/" + zip.each.entries[1].name[0..(zip.each.entries[1].name =~ /\//)]
+      FileUtils.mkdir_p "documents/" + str
       doc = REXML::Document.new
       
       zip.each do |single_file|
@@ -182,7 +182,10 @@ class DocumentsController < ApplicationController
           new_element.add_attributes(child.attributes) if child.has_attributes?
           child.children.each do |table|
             new_element = parse_table(new_element, table)
-          end
+          end   
+            if(!new_element.attributes["id"].nil?)
+              new_element.add_attribute({"class" => "commentable"})
+            end
           parent.add_element(new_element)
         elsif child.name == 'img'
           new_element = REXML::Element.new("img")
@@ -192,12 +195,18 @@ class DocumentsController < ApplicationController
             else
               new_element.add_attribute(key, value)
             end
-          end
+          end   
+            if(!new_element.attributes["id"].nil?)
+              new_element.add_attribute({"class" => "commentable"})
+            end
           parent.add_element(new_element)
         elsif child.has_text?
           if child.name == 'p' || child.name == 'b'|| child.name == 'i' || child.name == 'u'
             new_element = child.clone
             new_element = parse_children(new_element, child.children, path_to_images) if child.has_elements? || child.has_text?
+              if(!new_element.attributes["id"].nil?)
+                new_element.add_attribute({"class" => "commentable"})
+              end
             parent.add_element(new_element)
           elsif child.name == 'heading'
             name = "h" + child.attributes["level"]
@@ -205,12 +214,18 @@ class DocumentsController < ApplicationController
             new_element = REXML::Element.new(name)
             new_element.add_attributes(child.attributes) if child.has_attributes?
             new_element = parse_children(new_element, child.children, path_to_images) if child.has_elements? || child.has_text?
+              if(!new_element.attributes["id"].nil?)
+                new_element.add_attribute({"class" => "commentable"})
+              end
             parent.add_element(new_element)
           else
             new_element = REXML::Element.new("div")
             new_element.add_attribute("class", child.name)
             new_element.add_attributes(child.attributes) if child.has_attributes?
             new_element = parse_children(new_element, child.children, path_to_images) if child.has_elements? || child.has_text?
+              if(!new_element.attributes["id"].nil?)
+                new_element.add_attribute({"class" => "commentable"})
+              end
             parent.add_element(new_element)
           end
         elsif child.has_elements?  
@@ -218,12 +233,18 @@ class DocumentsController < ApplicationController
             new_element.add_attribute("class", child.name)
             new_element.add_attributes(child.attributes) if child.has_attributes?
             new_element = parse_children(new_element, child.children, path_to_images) if child.has_elements? || child.has_text?
+              if(!new_element.attributes["id"].nil?)
+                new_element.add_attribute({"class" => "commentable"})
+              end
             parent.add_element(new_element)
         else
             new_element = REXML::Element.new("div")
             new_element.add_attribute("class", child.name)
             new_element.add_attributes(child.attributes) if child.has_attributes?
             new_element = parse_children(new_element, child.children, path_to_images) if child.has_elements? || child.has_text?
+              if(!new_element.attributes["id"].nil?)
+                new_element.add_attribute({"class" => "commentable"})
+              end
             parent.add_element(new_element)
         end
       elsif child.is_a? REXML::Text

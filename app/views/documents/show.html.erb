@@ -1,4 +1,19 @@
 <head>
+
+<div class='dialog'>
+	<div class='text'></div>
+	<div class='comment-input'>
+		<form action="/comments/new">
+			<label for='username'>
+		        Comment
+		        <input name='comment' type='text' />
+		      </label>
+		      <input type='submit' value='Submit Comment' />
+		</form>
+	</div>
+	<div class='comments'></div>
+</div>
+
 <p>
   <b>Title:</b>
   <%=h @document.title %>
@@ -9,16 +24,6 @@
   <%= textilize(@document.content) %>
 </p>
 
-<script type="text/javascript">
-$(document).ready(function(){
-	("div[id]").mouseenter(function(){
-		$(this).addclass("over");
-	});
-	("div[id]").mouseleave(function(){
-		$(this).removeclass("over");
-	}); 
-});
-</script>
 
 <% @documentversion.reverse.each do |version| %>
   Version <%= version.version %> Updated <%= version.updated_at %>
@@ -33,3 +38,67 @@ $(document).ready(function(){
 <% end %>
 <%= link_to 'Edit', edit_document_path(@document) %> |
 <%= link_to 'Back', documents_path %>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+<script type="text/javascript" >
+
+var app = {
+	
+	setupNodeHover: function(){
+		$('[num]').mouseenter(function(e){
+			$(this).addClass('over');
+			return false;
+		});
+
+		$('[num]').mouseleave(function(e){
+			$(this).removeClass('over');
+			return false;
+		});
+	},
+	
+	setupNodeClick: function(){
+		$('[num]').click(function(e){
+			document_id = <%= @document %>;
+			$node_id = $(this)['id'];
+			$('.dialog .text:first').text($(this).text());
+			var.getComments(document_id, node_id);
+			$('.dialog:first').dialog({modal: true});
+			$form = $('.dialog .form:first');
+			$form.submit(function(e){
+				e.preventDefault();
+				$.post(
+					$form.attr('action'), 
+					{
+						document_id: document_id, 
+						node_id: node_id, 
+						comment_text: $form.find("input[type='text']:first").text()
+					}, 
+					function()
+					{
+						var.getComments(document_id, node_id);
+					}
+				);
+			};
+		});
+	},
+	
+	getComments: function(document_id, node_id){
+		$('.dialog .comments').text("");
+		$('.dialog .comments').text($.get("/comments/show/" + document_id + "/" + node_id));
+	}
+	
+}
+
+jQuery(function(){
+	
+	$('.dialog').hide();
+	
+	var.setupNodeHover();
+	
+	var.setupNodeClick();
+	
+});
+
+</script>

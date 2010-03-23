@@ -17,7 +17,15 @@ a:visited { color: #666; }
 a:hover { color: #fff; background-color:#000; }
 
 .over {
-	background-color: blue;
+	background-color: #ffff55;
+}
+
+.click {
+	background-color: #5555ff;
+}
+
+.ui-dialog {
+  background-color: #777777;
 }
 
 .fieldWithErrors {
