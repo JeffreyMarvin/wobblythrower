@@ -3,7 +3,7 @@
 <div class='dialog'>
 	<div class='text'></div>
 	<div class='comment-input'>
-		<form action="/comments/new">
+		<form action="/comments">
 			<label for='username'>
 				Comment
 				<input name='comment' type='text' />
@@ -67,7 +67,7 @@ jQuery(function(){
 		$dialog = $('.dialog:first');
 		
 		$dialog.find('.text:first').text($(this).text());
-		$dialog.find('.comments:first').text($.get("/comments/" + d_id + '?node_id=' + n_id));
+		$dialog.find('.comments:first').load("/comments/" + d_id + '?node_id=' + n_id);
 		$dialog.dialog();
 		
 		$form = $dialog.find('form:first');
@@ -83,7 +83,7 @@ jQuery(function(){
 				}, 
 				function()
 				{
-					$dialog.find('.comments:first').text($.get("/comments/" + d_id + "?node_id=" + n_id));
+					$dialog.find('.comments:first').load("/comments/" + d_id + '?node_id=' + n_id);
 				}
 			);
 		});
@@ -92,3 +92,4 @@ jQuery(function(){
 });
 
 </script>
+

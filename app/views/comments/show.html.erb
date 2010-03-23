@@ -1,3 +1,14 @@
-<% @document.each do |document| %>
-<p> <% document.comment_text %> </p>
+<table>
+  <tr>
+    <th>Comment</th>
+	<th>When</th>
+  </tr>
+
+<% @comment.each do |comment| %>
+  <tr>
+    <td><%=h comment.comment_text %></td>
+	<td><%=h comment.created_at %></td>
+  </tr>
+
 <% end %>
+</table>
