@@ -7,13 +7,34 @@
   <title>Documents: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'scaffold' %>
   <%= stylesheet_link_tag 'default' %>
+  <%= stylesheet_link_tag 'style' %>
   <%= stylesheet_link_tag 'jquery-ui-1.8.custom' %>
 </head>
-<body>
-
-<p style="color: green"><%= flash[:notice] %></p>
-
-<%= yield %>
-
-</body>
+  <body>
+    <div id="header_wrap">
+      <div id="header">
+        <img src="/images/header_gradient_blue.jpg" alt="" class="gradient">
+        <ul class="navigation">
+          <li class="current_page_item"><a href="/" title="Home">Home</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="page_wrap">
+      <div id="page" class="clearfix">
+        <div id="sidebar"></div>
+          <div id="content">
+            <p style="color: green"><%= flash[:notice] %></p>
+            <%= yield %>
+            <br class="clear">
+          </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer_wrap">
+      <div id="footer">
+        <p class="left">© 2010 WordPress Wiki Theme | Powered by <a href="htto://wordpress.org">Wordpress</a></p>
+        <p style="text-align:right">Icons courtesy of <a href="http://www.famfamfam.com/">FamFamFam</a> and <a href="http://wefunction.com/2008/07/function-free-icon-set">WeFunction</a></p>
+      </div>
+    </div>
+  </body>
 </html>
