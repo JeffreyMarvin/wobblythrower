@@ -1,4 +1,5 @@
 require 'zip/zip'
+require 'RMagick'
 
 class DocumentsController < ApplicationController
   # GET /documents
@@ -50,18 +51,24 @@ class DocumentsController < ApplicationController
 #      doc = REXML::Document.new uploaded_file
 #    elsif file.path.downcase =~ /.zip/
       zip = Zip::ZipFile.open(file.path)
-      str = "public/assets/xml/" + zip.each.entries[1].name[0..(zip.each.entries[1].name =~ /\//)]
-      FileUtils.mkdir_p str
-      str = "images/" + zip.each.entries[1].name[0..(zip.each.entries[1].name =~ /\//)]
-      FileUtils.mkdir_p "documents/" + str
+      FileUtils.mkdir_p ("public/assets/xml/" + File.dirname(zip.each.entries[1].name))
+      FileUtils.mkdir_p "public" + (str = "/images/" + File.dirname(zip.each.entries[1].name))
       doc = REXML::Document.new
       
       zip.each do |single_file|
         if single_file.name.downcase =~ /.xml/
-          single_file.extract(File.join("public/assets/xml/", single_file.name))
-          doc = REXML::Document.new File.new(File.join("public/assets/xml/", single_file.name))
-        else
-          single_file.extract(File.join("documents/images/", single_file.name))
+          path = File.join("public/assets/xml/", single_file.name)
+          File.delete(path) if File.exist?(path)
+          single_file.extract(path)
+          doc = REXML::Document.new File.new(path)
+        elsif single_file.name =~ /\./
+          path = File.join("public/images/", single_file.name)
+          puts path
+          File.delete(path) if File.file?(path)
+          single_file.extract(path)
+          img = Magick::ImageList.new(path)
+          img.write(path[0..(path =~ /\./)] + "png")
+          File.delete(path) if File.file?(path)
         end
       end
       
@@ -191,8 +198,10 @@ class DocumentsController < ApplicationController
           new_element = REXML::Element.new("img")
           child.attributes.each do |key, value|
             if key == "file"
-              new_element.add_attribute("src", File.join(path_to_images, value))
-            else
+              new_element.add_attribute("src", File.join(path_to_images, value[0..(value =~ /\./)] + "png"))
+            elsif key == "img-format"
+              new_element.add_attribute("img-format", "png")
+          else
               new_element.add_attribute(key, value)
             end
           end   
