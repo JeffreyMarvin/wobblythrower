@@ -1,0 +1,18 @@
+<!-- app/views/user/register.html.erb -->
+
+<% if(flash) %>
+  <% if flash[:message]  %>
+    <div> <%= flash[:message] %> <br /> <br /> </div>
+  <% end %>
+  <% if flash[:error]%>
+    <div> <%= flash[:error] %> <br /> <br /> </div>
+  <% end %>
+<% end %>
+
+<%= form_tag :action => 'create_user'%>
+  Username: <%= text_field "user", "username" %>&#x00A;
+  <br/>
+  Password: <%= password_field "user", "password" %>&#x00A;
+  <br/>
+  Confirm_Password: <%= password_field "user", "confirm" %>&#x00A;
+  <%= submit_tag %>

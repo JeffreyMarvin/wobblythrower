@@ -18,8 +18,13 @@
 </table>
 
 <br />
-<%    link_to "Logout", :action => :logout if session[:id]%>
-<%    link_to "Login", :action => :login if(!session[:id])%>
-
+<% if session[:id] %>
+  Logged in as: <%= User.find(session[:id]).username %> <br />
+  <%= link_to "Logout", :controller => :users, :action => :logout %>
+<% else %>
+  <%= link_to "Login", :controller => :users, :action => :login %>
+  <%= link_to "Register", :controller => :users, :action => :register %>
+<% end %>
+<br />
 <br />
 <%= link_to 'New document', new_document_path %>

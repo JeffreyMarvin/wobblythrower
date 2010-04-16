@@ -1,10 +1,20 @@
-<!-- app/views/user/login.rhtml -->
+<!-- app/views/user/login.html.erb -->
 
-<% if @flash[:message] %> <div> <%= @flash[:message] %> </div> <% end %>
-<% if @flash[:error] %> <div> <%= @flash[:error] %> </div> <% end %>
+<% if(flash) %>
+  <% if flash[:message]  %>
+    <div> <%= flash[:message] %> <br /> <br /> </div>
+  <% end %>
+  <% if flash[:error]%>
+    <div> <%= flash[:error] %> <br /> <br /> </div>
+  <% end %>
+<% end %>
 
 <%= form_tag :action => 'process_login'%>
   Username: <%= text_field "user", "username" %>&#x00A;
+  <br/>
   Password: <%= password_field "user", "password" %>&#x00A;
-  <%= submit_tag %>
-<%= end_form_tag %>
+  <br/>
+  <%= submit_tag "Submit" %>
+<br />
+<br />
+<%= link_to "Register", :action => :register %>

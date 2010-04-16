@@ -10,6 +10,11 @@
 </p>
 
 <p>
+  <b>User:</b>
+  <%= User.find(@document.user_id).username %>
+</p>
+
+<p>
   <b>Content:</b>
   <%= textilize(@document.content) %>
 </p>
