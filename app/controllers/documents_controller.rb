@@ -2,6 +2,8 @@ require 'zip/zip'
 require 'RMagick'
 
 class DocumentsController < ApplicationController
+  before_filter :login_required, :only => :create
+  
   # GET /documents
   # GET /documents.xml
   def index
@@ -44,14 +46,13 @@ class DocumentsController < ApplicationController
   # POST /documents
   # POST /documents.xml
   def create
-    
     file = params[:uploaded_file]
     
 #    if file.path.downcase =~ /.xml/
 #      doc = REXML::Document.new uploaded_file
 #    elsif file.path.downcase =~ /.zip/
       zip = Zip::ZipFile.open(file.path)
-      FileUtils.mkdir_p ("public/assets/xml/" + File.dirname(zip.each.entries[1].name))
+      FileUtils.mkdir_p("public/assets/xml/" + File.dirname(zip.each.entries[1].name))
       FileUtils.mkdir_p "public" + (str = "/images/" + File.dirname(zip.each.entries[1].name))
       doc = REXML::Document.new
       
@@ -83,7 +84,7 @@ class DocumentsController < ApplicationController
     
 #    data = uploaded_file.read if uploaded_file.respond_to? :read
     
-    @document = Document.new({:title => params[:title], :content => data})
+    @document = Document.new({:title => params[:title], :content => data, :user_id => session[:id]})
     
 #    @document = Document.new(params[:document])
 

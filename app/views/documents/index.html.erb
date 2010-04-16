@@ -3,11 +3,13 @@
 <table>
   <tr>
     <th>Title</th>
+    <th>User</th>
   </tr>
 
 <% @documents.each do |document| %>
   <tr>
     <td><%=h document.title %></td>
+    <td><%=h User.find(document.user_id).username %></td>
     <td><%= link_to 'Show', document %></td>
     <td><%= link_to 'Edit', edit_document_path(document) %></td>
     <td><%= link_to 'Destroy', document, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -16,5 +18,8 @@
 </table>
 
 <br />
+<%    link_to "Logout", :action => :logout if session[:id]%>
+<%    link_to "Login", :action => :login if(!session[:id])%>
 
+<br />
 <%= link_to 'New document', new_document_path %>

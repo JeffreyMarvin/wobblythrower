@@ -9,12 +9,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100323040613) do
+ActiveRecord::Schema.define(:version => 20100416184953) do
 
   create_table "comments", :force => true do |t|
     t.text     "comment_text"
     t.integer  "document_id"
     t.text     "node_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20100323040613) do
     t.integer  "version"
     t.string   "title"
     t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -33,9 +35,17 @@ ActiveRecord::Schema.define(:version => 20100323040613) do
   create_table "documents", :force => true do |t|
     t.string   "title"
     t.text     "content"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "version"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "password"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

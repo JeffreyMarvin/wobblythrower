@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_filter :login_required, :only => :create
 
   def create
     @comment = Comment.new({:comment_text => params[:comment_text], :document_id => params[:document_id], :node_id => params[:node_id]})

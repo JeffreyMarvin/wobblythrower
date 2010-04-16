@@ -1,12 +1,14 @@
 <table>
   <tr>
     <th>Comment</th>
+	<th>User</th>
 	<th>When</th>
   </tr>
 
 <% @comment.each do |comment| %>
   <tr>
     <td><%=h comment.comment_text %></td>
+	<td><%=h User.find(comment.user_id).username%></td>
 	<td><%=h comment.created_at %></td>
   </tr>
 
