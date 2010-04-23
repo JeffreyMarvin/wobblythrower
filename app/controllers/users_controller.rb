@@ -22,6 +22,8 @@ class UsersController < ApplicationController
       flash[:error] = 'Passwords do not match.'
       redirect_to :action => 'register', :username => params[:user][:username]
     end
+    flash[:error] = 'Something went wrong...'
+    redirect_to :action => 'register', :username => params[:user][:username]
   end
   
   def login
