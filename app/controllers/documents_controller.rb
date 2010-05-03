@@ -1,5 +1,6 @@
 require 'zip/zip'
 require 'RMagick'
+require 'rexml/document'
 
 class DocumentsController < ApplicationController
   before_filter :login_required, :only => :create
@@ -47,31 +48,33 @@ class DocumentsController < ApplicationController
   # POST /documents.xml
   def create
     file = params[:uploaded_file]
+#    puts file.methods
     
 #    if file.path.downcase =~ /.xml/
-#      doc = REXML::Document.new uploaded_file
+      doc = REXML::Document.new(file)
+      str = "/images/"
 #    elsif file.path.downcase =~ /.zip/
-      zip = Zip::ZipFile.open(file.path)
-      FileUtils.mkdir_p("public/assets/xml/" + File.dirname(zip.each.entries[1].name))
-      FileUtils.mkdir_p "public" + (str = "/images/" + File.dirname(zip.each.entries[1].name))
-      doc = REXML::Document.new
-      
-      zip.each do |single_file|
-        if single_file.name.downcase =~ /.xml/
-          path = File.join("public/assets/xml/", single_file.name)
-          File.delete(path) if File.exist?(path)
-          single_file.extract(path)
-          doc = REXML::Document.new File.new(path)
-        elsif single_file.name =~ /\./
-          path = File.join("public/images/", single_file.name)
-          puts path
-          File.delete(path) if File.file?(path)
-          single_file.extract(path)
-          img = Magick::ImageList.new(path)
-          img.write(path[0..(path =~ /\./)] + "png")
-          File.delete(path) if File.file?(path)
-        end
-      end
+#      zip = Zip::ZipFile.open(file.path)
+#      FileUtils.mkdir_p("public/assets/xml/" + File.dirname(zip.each.entries[1].name))
+#      FileUtils.mkdir_p "public" + (str = "/images/" + File.dirname(zip.each.entries[1].name))
+#      doc = REXML::Document.new
+#      
+#      zip.each do |single_file|
+#        if single_file.name.downcase =~ /.xml/
+#          path = File.join("public/assets/xml/", single_file.name)
+#          File.delete(path) if File.exist?(path)
+#          single_file.extract(path)
+#          doc = REXML::Document.new File.new(path)
+#        elsif single_file.name =~ /\./
+#          path = File.join("public/images/", single_file.name)
+#          puts path
+#          File.delete(path) if File.file?(path)
+#          single_file.extract(path)
+#          img = Magick::ImageList.new(path)
+#          img.write(path[0..(path =~ /\./)] + "png")
+#          File.delete(path) if File.file?(path)
+#        end
+#      end
       
 #    else
 #      format.html { render :action => "new" }
@@ -174,7 +177,7 @@ class DocumentsController < ApplicationController
   def parse_xml(doc, path_to_images)
     new_doc = REXML::Document.new
     new_doc << doc.xml_decl
-    new_doc << doc.doctype
+#    new_doc << doc.doctype
     new_element = doc.elements[1].clone
     new_element = parse_children(new_element, doc.elements[1].children, path_to_images) if doc.elements[1].has_elements?
     new_doc.add_element(new_element)
